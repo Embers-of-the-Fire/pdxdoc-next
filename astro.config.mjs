@@ -26,7 +26,7 @@ export default defineConfig({
                 },
             },
 			editLink: {
-				baseUrl: 'https://github.com/tauri-apps/tauri-docs/edit/next',
+				baseUrl: 'https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main',
 			},
             components: {
                 SiteTitle: "./src/components/overrides/SiteTitle.astro",

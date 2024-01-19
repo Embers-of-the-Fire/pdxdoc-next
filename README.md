@@ -1,5 +1,7 @@
 # Stellaris Mod Document
 
+Site availabile at [here](https://main--pdxdoc-next.netlify.app/).
+
 ## Prerequisites
 
 You have to install [pnpm](https://pnpm.io) before contributing to this project.
