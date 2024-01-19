@@ -12,11 +12,15 @@ title: MOD 基础知识与准备
 
 ![img](../../../assets/guides/mod_basic.assets/mod_basic.0.jpg)
 
-<p align="center"><small>图1</small></p>
+<p align="center">
+    <small>图1</small>
+</p>
 
 ![img](../../../assets/guides/mod_basic.assets/mod_basic.1.jpg)
 
-<p align="center"><small>图2</small></p>
+<p align="center">
+    <small>图2</small>
+</p>
 
 ## Stellaris 的具体文件组成
 
@@ -32,119 +36,119 @@ title: MOD 基础知识与准备
 
 > 注：由于教程编写时间以及蠢驴更新条目的原因，目录所示条目与下表介绍顺序并不相符，因此从下表或目录索引到你需要的条目解释皆可。
 
-| 条目名称                                                     | 条目内容                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [agendas](common_modding/agendas.md)                         | 议程，所有的可以使用的议程的集合                             |
-| agreement_presets                                            | 外交附庸条例条目之一                                         |
-| agreement_resources                                          | 外交附庸条例条目之一                                         |
-| agreement_term_values                                        | 外交附庸条例条目之一                                         |
-| agreement_term_values                                        | 外交附庸条例条目之一                                         |
-| ai_budget                                                    | 定义 AI 的行为相关，主要是用于 AI 的计划经济                 |
-| ai_espionage                                                 | AI 的间谍行动相关                                            |
-| ai_force_species                                             | 定义 AI 优先选择哪类物种增长的逻辑                           |
-| [artifact_actions](common_modding/archaeology.md#小型文物活动artifact_actions) | 小型文物的使用选项                                           |
-| [archaeological_site_types](common_modding/archaeology.md#考古遗址archaeological_site_types) | 各种坟头                                                     |
-| ambient_objects                                              | 用于定义出现在异常之中的模型                                 |
-| anomalies                                                    | 异常，所有的可使用异常                                       |
-| [armies](common_modding/armies.md)                           | 陆军，不论是事件生成的还是可以建造的（灵能部队/基因部队等）  |
-| [ascension_perks](common_modding/ascension_perks.md)         | 飞升，一切飞升的集合（三大飞升等）                           |
-| asteroid_belts                                               | 小行星带，用于定义小行星带的模型                             |
-| attitudes                                                    | 用于定义 AI 的态度类型（谨慎/中立/敌对等）                   |
-| bombardment_stances                                          | 用于定义轨道轰炸的类型（末日轰炸/有限轰炸等）                |
-| [buildings](common_modding/buildings.md)                     | 建筑，各类建筑的集合（合金厂/剧院等）                        |
-| [button_effects](visual/custom_gui.md#gui-模板)              | 用于自定义 UI 界面的按钮效果                                 |
-| bypass                                                       | 用于定义星门/虫洞类设施相关（就是可以从一个星系传送到另一个星系的玩意） |
-| [casus_belli](common_modding/casus_belli.md)                 | 战争借口，用于定义战争的借口（全面战争/侵略等）              |
-| colony_automation                                            | 定义殖民地自动化建造模板内容                                 |
-| colony_automation_exceptions                                 | 定义一般殖民地以外的自动化建造模板（犯罪星球之类的）         |
-| colony_automation_categores                                  | 定义殖民地自动化建造模板类别                                 |
-| colony_types                                                 | 殖民地类别，定义殖民地的类别（精炼星球/科研星球等）          |
-| colors                                                       | 颜色，用于国家颜色选择的定义                                 |
-| [component_sets](common_modding/ship.md#组件集合component_sets) | 舰船部件的定义文件                                           |
-| component_tags                                               | 用于将修正器和舰船的组件关联在一起（能量/动能等）            |
-| [component_templates](common_modding/ship.md#舰船部件component_templates) | 舰船部件，每种武器的属性设置（伤害/槽位/冷却等）             |
-| country_container                                            | 用于定义国家组成部分所属于的经济分类，例如收支类型的自定义修正本地化，需要同时修改 economic_categories 才有效 |
-| country_customization                                        | 定义给予各种帝国定制化的操作，给予自动生成帝国的旗帜与物种肖像定制（说白了就是让某一类国家旗帜趋向于同质化，不同国家体现差异化，蠢驴只给了机械，蜂巢和普通帝国的定制） |
-| country_limits                                               | 蠢驴抽风的表现条目之一，定义各类船只的容量以及使用限制       |
-| country_types                                                | 定义国家类型，设置他们的规则（堕落/普通/天灾/各种野怪/中立势力等） |
-| crisis_levels                                                | 定义化身天灾的天灾等级（可修改内容极少）                     |
-| decisions                                                    | 星球法令，生效在星球上的各种法令（促进人口增长/宣布禁止人口增长等） |
-| defines                                                      | 设置游戏的基本参数                                           |
-| deposits                                                     | 地块，设置星球上的行星地块（高山/富矿/海岛/城市废墟/工业废土等），包括非殖民星球的资源产出。 |
-| deposit_categories                                           | 定义地块的经济类别以及一些其他属性（稀有，障碍等性质）       |
-| diplo_phrases                                                | 外交语言触发，设置国家间使用的外交用语的逻辑与触发（敌对语句触发/交战语句触发等） |
-| diplomacy_economy                                            | 定义外交行动的经济条件类型以及所需条件                       |
-| diplomatic_actions                                           | 定义外交行动，目前只能修改现有的，无法新增                   |
-| districts                                                    | 区划，设置各种类型的行星区划（城市/发电/矿产/农业等）        |
-| dynamic_text                                                 | 目前作用未知                                                 |
-| edicts                                                       | 法令，设置各国所可用法令（封圣/科研补贴/圣地/外交补贴等）    |
-| [ethics](common_modding/edicts.md)                           | 思潮，设置各种思潮，以及对应的国家修正（军国/极端和平等），若需要设置开局可选，必须修改 UI 文件 |
-| ethic_categories                                             | 定义思潮类别                                                 |
-| espionage_assets                                             | 定义间谍行动的线人                                           |
-| espionage_operation_categories                               | 定义间谍行动的类别                                           |
-| espionage_operation_types                                    | 定义间谍行动的具体内容                                       |
-| event_chains                                                 | 事件链，设置可用的事件链                                     |
-| economic_categories                                          | 经济分类文件。用于定义整个游戏内所有的经济收益（区分是是什么部分，整个部分是否有加成，有什么加成等）\*注意，有些内容和硬代码相关，不要更改！ |
-| economic_plans                                               | AI 的经济计划，设定 AI 的经济收入目标以驱动 AI 运营          |
-| fallen_empires                                               | 堕落帝国，设置可被生成的堕落帝国                             |
-| federation_law_categories                                    | 联邦法律类型                                                 |
-| federation_laws                                              | 联邦法律，具体的内容                                         |
-| federation_perks                                             | 联邦加成，用于提升联邦等级后的加成                           |
-| federation_types                                             | 联邦类型，如霸权联邦，贸易联盟等                             |
-| first_contact                                                | 首次接触，用于首次接触的特殊项目（其实就是坟头），由于涉及到了一定的硬代码，不建议修改。 |
-| galactic_community_actions                                   | 定义星海共同体主席国/皇帝的行动花销（目前只能修改经济类别与操作成本，用处不大） |
-| galactic_focuses                                             | 定义星海共同体的银河焦点内容                                 |
-| game_rules                                                   | 用于各种游戏操作的逻辑，即是否可以奴役 pop。这里的逻辑不会覆盖硬编码规则 |
-| global_ship_designs                                          | 设置全局具体舰船配置，供以各类刷船使用                       |
-| [governments](common_modding/goverments.md)                  | 设置公民性（国策）、政体、政府形式（矿业工会/寡头制/同甘共苦等）以及起源 |
-| graphical_culture                                            | 定义图形文化以供其他地方使用（开局让你选母星背景的地方）     |
-| leader_classes                                               | 领袖等级，定义领袖等级的相关设定                             |
-| [inline_scripts](dynamic_modding/inline_scripts.md)          | 内联脚本，将会单独开一个章节介绍                             |
-| map_modes                                                    | 地图模式，可以允许一定条件下用不同颜色显示银河系，不需要改动 UI |
-| megastructures                                               | 巨构建筑相关                                                 |
-| message_types                                                | 用于 UI 上方提示信息内容，原版就是被宣战/科技研发完成/探索完成等 |
-| name_lists                                                   | 名称列表，定义不同种族的不同随机名称                         |
-| observation_station_missions                                 | 土著观察任务，定义观察任务的类型（被动观察/主动观察等）      |
-| on_actions                                                   | 触发器，设置各类需要特定触发的事件列表                       |
-| opinion_modifiers                                            | 关系修正，一个国家对于另一个国家的关系的修正（有利的贸易协定+100 等） |
-| personalities                                                | AI 性格，由于 AI 的角色扮演设置（民主斗士/奴隶暴君等）       |
-| [planet_classes](common_modding/planet_classes.md)           | 星球类别，所有星球，包括恒星的设置（G 级恒星/大陆星球等）    |
-| planet_modifiers                                             | 星球修正器，用于设置星系生成时自然添加的星球 buff 的概率设定 |
-| [policies](common_modding/policies.md)                       | 国家政策，所有的国家政策的集合（奴隶制/战争哲学/轰炸政策/经济政策等） |
-| pop_categories                                               | 人口阶级（统治者/专家/劳工/复杂子人口等）                    |
-| pop_faction_types                                            | 党派，设置不同方面的党派生成和需求（军国主义派系/孤立主义派系等） |
-| [pop_jobs](common_modding/pop_jobs.md)                       | 人口职业，所有工作的集合（矿工/农夫/科研人员/工匠等）        |
-| [relics](common_modding/archaeology.md#遗珍relics)           | 遗珍，比如银河之星                                           |
-| random_names                                                 | 随机名称，定义随机生成的名称（帝国/党派等）                  |
-| [scripted_effects](dynamic_modding/scripted_effect.md) | 封装触发的效果，一般用于事件效果（帝国生成/小灰转化等）      |
-| [scripted_loc](dynamic_modding/scripted_localization.md)                                                 | 封装触发的文本，用于经常被引用的文本生成                     |
-| [scripted_triggers](dynamic_modding/scripted_triggers.md) | 封装条件判断，用于经常被引用的事件判断                       |
-| [scripted_variables](event_modding/further.md#脚本变量scripted-variables) | 常量，用于经常被引用的数值（科技数值等）                     |
-| [script_values](dynamic_modding/script_values.md)                | 脚本值，用于复杂变量操作                                     |
-| [section_templates](common_modding/ship.md#舰船区段section_templates) | 船只的分段，例如战列舰有三个分段，这里就是定义某一个分段的文件 |
-| ship_behaviors                                               | 船只行为，用于设置舰船以及舰载机的船只行为                   |
-| [ship_sizes](common_modding/ship.md#舰船类型ship_sizes)      | 舰船类型，例如普通帝国的战列舰，不管用什么分段，基础情况下这个战列舰就算是一个“类型” |
-| solar_system_initializers                                    | 恒星系生成器，用于一切恒星系的生成                           |
-| special_projects                                             | 特殊项目，所有特殊项目的集合                                 |
-| species_archetypes                                           | 效果是设定一个种族类别最大的修饰特征数目（肉体/机械等）      |
-| species_classes                                              | 种族类别，例如所有的哺乳类算是一个类别                       |
-| species_names                                                | 种族随机名称，设置一个种族类别可以使用的随机名称             |
-| species_rights                                               | 种族权利，设置种族可以被赋予的权利（公民性/居留权等）        |
-| star_classes                                                 | 恒星系类别，不同于星球等级，这个是设置整个恒星系的类别（G 恒星系/双恒星系等） |
-| starbase_buildings                                           | 太空基地建筑，比如舰队学院等                                 |
-| starbase_levels                                              | 太空基地等级                                                 |
-| starbase_modules                                             | 太空基地模块，比如炮台或者船坞等                             |
-| starbase_types                                               | 太空基地类别，主要用于解锁相对应的太空基地建筑的建造         |
-| start_screen_messages                                        | 开始窗口的文本信息，主要是用于在开局描述这个国家的概括，或者设置自动生成的文本 |
-| static_modifiers                                             | 固定修正器，几乎所有的修正的都在这里，不管是星球还是帝国     |
-| strategic_resources                                          | 资源，各种资源，包括能源，矿物，合金等（甚至还有时间）       |
-| [technology](common_modding/technology.md)                   | 科技，所有的科技的集合                                       |
-| terraform                                                    | 地形改造，所有的可改造地形的方案                             |
-| trade_conversions                                            | 贸易转化，定义贸易转化相关（1 贸易值换 1 电/1 贸易值换 0.5 点和 0.15 凝聚力等） |
-| tradition_categories                                         | 传统树，定义某个类别的传统                                   |
-| traditions                                                   | 传统，具体定义在某个传统类别的具体传统                       |
-| [traits](common_modding/traits.md)                           | 特质，不论是种族特质还是领袖特质                             |
-| [war_goals](common_modding/war_goals.md)                     | 具体的可选择战争项目（羞辱/巨像等）                          |
+| 条目名称                                                                                          | 条目内容                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [agendas](/guides/common_modding/agendas)                                                         | 议程，所有的可以使用的议程的集合                                                                                                                                       |
+| agreement_presets                                                                                 | 外交附庸条例条目之一                                                                                                                                                   |
+| agreement_resources                                                                               | 外交附庸条例条目之一                                                                                                                                                   |
+| agreement_term_values                                                                             | 外交附庸条例条目之一                                                                                                                                                   |
+| agreement_term_values                                                                             | 外交附庸条例条目之一                                                                                                                                                   |
+| ai_budget                                                                                         | 定义 AI 的行为相关，主要是用于 AI 的计划经济                                                                                                                           |
+| ai_espionage                                                                                      | AI 的间谍行动相关                                                                                                                                                      |
+| ai_force_species                                                                                  | 定义 AI 优先选择哪类物种增长的逻辑                                                                                                                                     |
+| [artifact_actions](/guides/common_modding/archaeology#小型文物活动artifact_actions)               | 小型文物的使用选项                                                                                                                                                     |
+| [archaeological_site_types](/guides/common_modding/archaeology#考古遗址archaeological_site_types) | 各种坟头                                                                                                                                                               |
+| ambient_objects                                                                                   | 用于定义出现在异常之中的模型                                                                                                                                           |
+| anomalies                                                                                         | 异常，所有的可使用异常                                                                                                                                                 |
+| [armies](/guides/common_modding/armies)                                                           | 陆军，不论是事件生成的还是可以建造的（灵能部队/基因部队等）                                                                                                            |
+| [ascension_perks](/guides/common_modding/ascension_perks)                                         | 飞升，一切飞升的集合（三大飞升等）                                                                                                                                     |
+| asteroid_belts                                                                                    | 小行星带，用于定义小行星带的模型                                                                                                                                       |
+| attitudes                                                                                         | 用于定义 AI 的态度类型（谨慎/中立/敌对等）                                                                                                                             |
+| bombardment_stances                                                                               | 用于定义轨道轰炸的类型（末日轰炸/有限轰炸等）                                                                                                                          |
+| [buildings](/guides/common_modding/buildings)                                                     | 建筑，各类建筑的集合（合金厂/剧院等）                                                                                                                                  |
+| [button_effects](visual/custom_gui#gui-模板)                                                      | 用于自定义 UI 界面的按钮效果                                                                                                                                           |
+| bypass                                                                                            | 用于定义星门/虫洞类设施相关（就是可以从一个星系传送到另一个星系的玩意）                                                                                                |
+| [casus_belli](/guides/common_modding/casus_belli)                                                 | 战争借口，用于定义战争的借口（全面战争/侵略等）                                                                                                                        |
+| colony_automation                                                                                 | 定义殖民地自动化建造模板内容                                                                                                                                           |
+| colony_automation_exceptions                                                                      | 定义一般殖民地以外的自动化建造模板（犯罪星球之类的）                                                                                                                   |
+| colony_automation_categores                                                                       | 定义殖民地自动化建造模板类别                                                                                                                                           |
+| colony_types                                                                                      | 殖民地类别，定义殖民地的类别（精炼星球/科研星球等）                                                                                                                    |
+| colors                                                                                            | 颜色，用于国家颜色选择的定义                                                                                                                                           |
+| [component_sets](/guides/common_modding/ship#组件集合component_sets)                              | 舰船部件的定义文件                                                                                                                                                     |
+| component_tags                                                                                    | 用于将修正器和舰船的组件关联在一起（能量/动能等）                                                                                                                      |
+| [component_templates](/guides/common_modding/ship#舰船部件component_templates)                    | 舰船部件，每种武器的属性设置（伤害/槽位/冷却等）                                                                                                                       |
+| country_container                                                                                 | 用于定义国家组成部分所属于的经济分类，例如收支类型的自定义修正本地化，需要同时修改 economic_categories 才有效                                                          |
+| country_customization                                                                             | 定义给予各种帝国定制化的操作，给予自动生成帝国的旗帜与物种肖像定制（说白了就是让某一类国家旗帜趋向于同质化，不同国家体现差异化，蠢驴只给了机械，蜂巢和普通帝国的定制） |
+| country_limits                                                                                    | 蠢驴抽风的表现条目之一，定义各类船只的容量以及使用限制                                                                                                                 |
+| country_types                                                                                     | 定义国家类型，设置他们的规则（堕落/普通/天灾/各种野怪/中立势力等）                                                                                                     |
+| crisis_levels                                                                                     | 定义化身天灾的天灾等级（可修改内容极少）                                                                                                                               |
+| decisions                                                                                         | 星球法令，生效在星球上的各种法令（促进人口增长/宣布禁止人口增长等）                                                                                                    |
+| defines                                                                                           | 设置游戏的基本参数                                                                                                                                                     |
+| deposits                                                                                          | 地块，设置星球上的行星地块（高山/富矿/海岛/城市废墟/工业废土等），包括非殖民星球的资源产出。                                                                           |
+| deposit_categories                                                                                | 定义地块的经济类别以及一些其他属性（稀有，障碍等性质）                                                                                                                 |
+| diplo_phrases                                                                                     | 外交语言触发，设置国家间使用的外交用语的逻辑与触发（敌对语句触发/交战语句触发等）                                                                                      |
+| diplomacy_economy                                                                                 | 定义外交行动的经济条件类型以及所需条件                                                                                                                                 |
+| diplomatic_actions                                                                                | 定义外交行动，目前只能修改现有的，无法新增                                                                                                                             |
+| districts                                                                                         | 区划，设置各种类型的行星区划（城市/发电/矿产/农业等）                                                                                                                  |
+| dynamic_text                                                                                      | 目前作用未知                                                                                                                                                           |
+| edicts                                                                                            | 法令，设置各国所可用法令（封圣/科研补贴/圣地/外交补贴等）                                                                                                              |
+| [ethics](/guides/common_modding/edicts)                                                           | 思潮，设置各种思潮，以及对应的国家修正（军国/极端和平等），若需要设置开局可选，必须修改 UI 文件                                                                        |
+| ethic_categories                                                                                  | 定义思潮类别                                                                                                                                                           |
+| espionage_assets                                                                                  | 定义间谍行动的线人                                                                                                                                                     |
+| espionage_operation_categories                                                                    | 定义间谍行动的类别                                                                                                                                                     |
+| espionage_operation_types                                                                         | 定义间谍行动的具体内容                                                                                                                                                 |
+| event_chains                                                                                      | 事件链，设置可用的事件链                                                                                                                                               |
+| economic_categories                                                                               | 经济分类文件。用于定义整个游戏内所有的经济收益（区分是是什么部分，整个部分是否有加成，有什么加成等）\*注意，有些内容和硬代码相关，不要更改！                           |
+| economic_plans                                                                                    | AI 的经济计划，设定 AI 的经济收入目标以驱动 AI 运营                                                                                                                    |
+| fallen_empires                                                                                    | 堕落帝国，设置可被生成的堕落帝国                                                                                                                                       |
+| federation_law_categories                                                                         | 联邦法律类型                                                                                                                                                           |
+| federation_laws                                                                                   | 联邦法律，具体的内容                                                                                                                                                   |
+| federation_perks                                                                                  | 联邦加成，用于提升联邦等级后的加成                                                                                                                                     |
+| federation_types                                                                                  | 联邦类型，如霸权联邦，贸易联盟等                                                                                                                                       |
+| first_contact                                                                                     | 首次接触，用于首次接触的特殊项目（其实就是坟头），由于涉及到了一定的硬代码，不建议修改。                                                                               |
+| galactic_community_actions                                                                        | 定义星海共同体主席国/皇帝的行动花销（目前只能修改经济类别与操作成本，用处不大）                                                                                        |
+| galactic_focuses                                                                                  | 定义星海共同体的银河焦点内容                                                                                                                                           |
+| game_rules                                                                                        | 用于各种游戏操作的逻辑，即是否可以奴役 pop。这里的逻辑不会覆盖硬编码规则                                                                                               |
+| global_ship_designs                                                                               | 设置全局具体舰船配置，供以各类刷船使用                                                                                                                                 |
+| [governments](/guides/common_modding/goverments)                                                  | 设置公民性（国策）、政体、政府形式（矿业工会/寡头制/同甘共苦等）以及起源                                                                                               |
+| graphical_culture                                                                                 | 定义图形文化以供其他地方使用（开局让你选母星背景的地方）                                                                                                               |
+| leader_classes                                                                                    | 领袖等级，定义领袖等级的相关设定                                                                                                                                       |
+| [inline_scripts](/guides/dynamic_modding/inline_scripts)                                          | 内联脚本，将会单独开一个章节介绍                                                                                                                                       |
+| map_modes                                                                                         | 地图模式，可以允许一定条件下用不同颜色显示银河系，不需要改动 UI                                                                                                        |
+| megastructures                                                                                    | 巨构建筑相关                                                                                                                                                           |
+| message_types                                                                                     | 用于 UI 上方提示信息内容，原版就是被宣战/科技研发完成/探索完成等                                                                                                       |
+| name_lists                                                                                        | 名称列表，定义不同种族的不同随机名称                                                                                                                                   |
+| observation_station_missions                                                                      | 土著观察任务，定义观察任务的类型（被动观察/主动观察等）                                                                                                                |
+| on_actions                                                                                        | 触发器，设置各类需要特定触发的事件列表                                                                                                                                 |
+| opinion_modifiers                                                                                 | 关系修正，一个国家对于另一个国家的关系的修正（有利的贸易协定+100 等）                                                                                                  |
+| personalities                                                                                     | AI 性格，由于 AI 的角色扮演设置（民主斗士/奴隶暴君等）                                                                                                                 |
+| [planet_classes](/guides/common_modding/planet_classes)                                           | 星球类别，所有星球，包括恒星的设置（G 级恒星/大陆星球等）                                                                                                              |
+| planet_modifiers                                                                                  | 星球修正器，用于设置星系生成时自然添加的星球 buff 的概率设定                                                                                                           |
+| [policies](/guides/common_modding/policies)                                                       | 国家政策，所有的国家政策的集合（奴隶制/战争哲学/轰炸政策/经济政策等）                                                                                                  |
+| pop_categories                                                                                    | 人口阶级（统治者/专家/劳工/复杂子人口等）                                                                                                                              |
+| pop_faction_types                                                                                 | 党派，设置不同方面的党派生成和需求（军国主义派系/孤立主义派系等）                                                                                                      |
+| [pop_jobs](/guides/common_modding/pop_jobs)                                                       | 人口职业，所有工作的集合（矿工/农夫/科研人员/工匠等）                                                                                                                  |
+| [relics](/guides/common_modding/archaeology#遗珍relics)                                           | 遗珍，比如银河之星                                                                                                                                                     |
+| random_names                                                                                      | 随机名称，定义随机生成的名称（帝国/党派等）                                                                                                                            |
+| [scripted_effects](/guides/dynamic_modding/scripted_effect)                                       | 封装触发的效果，一般用于事件效果（帝国生成/小灰转化等）                                                                                                                |
+| [scripted_loc](/guides/dynamic_modding/scripted_localization)                                     | 封装触发的文本，用于经常被引用的文本生成                                                                                                                               |
+| [scripted_triggers](/guides/dynamic_modding/scripted_triggers)                                    | 封装条件判断，用于经常被引用的事件判断                                                                                                                                 |
+| [scripted_variables](/guides/event_modding/further#脚本变量scripted-variables)                    | 常量，用于经常被引用的数值（科技数值等）                                                                                                                               |
+| [script_values](/guides/dynamic_modding/script_values)                                            | 脚本值，用于复杂变量操作                                                                                                                                               |
+| [section_templates](/guides/common_modding/ship#舰船区段section_templates)                        | 船只的分段，例如战列舰有三个分段，这里就是定义某一个分段的文件                                                                                                         |
+| ship_behaviors                                                                                    | 船只行为，用于设置舰船以及舰载机的船只行为                                                                                                                             |
+| [ship_sizes](/guides/common_modding/ship#舰船类型ship_sizes)                                      | 舰船类型，例如普通帝国的战列舰，不管用什么分段，基础情况下这个战列舰就算是一个“类型”                                                                                   |
+| solar_system_initializers                                                                         | 恒星系生成器，用于一切恒星系的生成                                                                                                                                     |
+| special_projects                                                                                  | 特殊项目，所有特殊项目的集合                                                                                                                                           |
+| species_archetypes                                                                                | 效果是设定一个种族类别最大的修饰特征数目（肉体/机械等）                                                                                                                |
+| species_classes                                                                                   | 种族类别，例如所有的哺乳类算是一个类别                                                                                                                                 |
+| species_names                                                                                     | 种族随机名称，设置一个种族类别可以使用的随机名称                                                                                                                       |
+| species_rights                                                                                    | 种族权利，设置种族可以被赋予的权利（公民性/居留权等）                                                                                                                  |
+| star_classes                                                                                      | 恒星系类别，不同于星球等级，这个是设置整个恒星系的类别（G 恒星系/双恒星系等）                                                                                          |
+| starbase_buildings                                                                                | 太空基地建筑，比如舰队学院等                                                                                                                                           |
+| starbase_levels                                                                                   | 太空基地等级                                                                                                                                                           |
+| starbase_modules                                                                                  | 太空基地模块，比如炮台或者船坞等                                                                                                                                       |
+| starbase_types                                                                                    | 太空基地类别，主要用于解锁相对应的太空基地建筑的建造                                                                                                                   |
+| start_screen_messages                                                                             | 开始窗口的文本信息，主要是用于在开局描述这个国家的概括，或者设置自动生成的文本                                                                                         |
+| static_modifiers                                                                                  | 固定修正器，几乎所有的修正的都在这里，不管是星球还是帝国                                                                                                               |
+| strategic_resources                                                                               | 资源，各种资源，包括能源，矿物，合金等（甚至还有时间）                                                                                                                 |
+| [technology](/guides/common_modding/technology)                                                   | 科技，所有的科技的集合                                                                                                                                                 |
+| terraform                                                                                         | 地形改造，所有的可改造地形的方案                                                                                                                                       |
+| trade_conversions                                                                                 | 贸易转化，定义贸易转化相关（1 贸易值换 1 电/1 贸易值换 0.5 点和 0.15 凝聚力等）                                                                                        |
+| tradition_categories                                                                              | 传统树，定义某个类别的传统                                                                                                                                             |
+| traditions                                                                                        | 传统，具体定义在某个传统类别的具体传统                                                                                                                                 |
+| [traits](/guides/common_modding/traits)                                                           | 特质，不论是种族特质还是领袖特质                                                                                                                                       |
+| [war_goals](/guides/common_modding/war_goals)                                                     | 具体的可选择战争项目（羞辱/巨像等）                                                                                                                                    |
 
 ### 其他一些比较常用和重要的文件
 
