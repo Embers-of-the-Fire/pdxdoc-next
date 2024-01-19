@@ -11,6 +11,11 @@ const authors: Record<string, blogAuthorSchema> = {
         title: "站长",
         picture: "/authors/Embers-of-the-Fire.jpg",
     },
+    "_OAO_": {
+        name: "_OAO_",
+        title: "Modder",
+        picture: "/authors/_OAO_.jpg",
+    }
 };
 
 export default authors;
