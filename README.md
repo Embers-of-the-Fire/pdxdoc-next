@@ -31,6 +31,12 @@
     文章 `src/content/docs/blog/practical_editor.mdx` 的图片应放置在 `src/content/docs/blog/practical_editor.assets/` 文件夹下。
 3.  文章应配备合适的摘要，文件名不使用中文或中文拼音。
 
+## Emoji
+
+当前，Starlight/Astro 并不支持 `:emoji_code:` 形式调用 emoji，需要复制原文。
+
+以下是常见 emoji 列表：[Github Gist: Emoji List](https://gist.github.com/rxaviers/7360908)。
+
 ## 构建命令
 
 所有命令应该在终端中在项目根目录下运行：
