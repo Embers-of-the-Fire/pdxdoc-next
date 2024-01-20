@@ -25,6 +25,11 @@ const authors: Record<string, blogAuthorSchema> = {
         name: "EnderAnswer",
         title: "Modder[Admin]",
         picture: "/authors/EnderAnswer.jpg",
+    },
+    "简言之": {
+        name: "简言之",
+        title: "Modder[Admin]",
+        picture: "/authors/简言之.jpg",
     }
 };
 
