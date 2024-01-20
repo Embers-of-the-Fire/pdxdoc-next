@@ -18,7 +18,7 @@ export default defineConfig({
         starlight({
             title: "Stellaris Mod 教程",
             social: {
-                github: "https://github.com/embers-of-the-fire",
+                github: "https://github.com/embers-of-the-fire/pdxdoc-next",
             },
             defaultLocale: "zh-CN",
             locales: {
