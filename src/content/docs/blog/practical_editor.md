@@ -7,8 +7,6 @@ excerpt: 粒子编辑器的配置与基本使用
 tags: ["教程", "相关工具", "编辑器"]
 ---
 
-# 粒子编辑器配置
-
 此篇教程仅讲述粒子编辑器的配置与基本使用，具体粒子编辑方式不进行教学。
 
 首先，粒子编辑器并非一个独立的应用程序，而是包含在游戏主程序中的一个分支程序（这么说应该不严谨，不过明白意思就行）。
@@ -25,7 +23,7 @@ tags: ["教程", "相关工具", "编辑器"]
 
 ![粒子编辑器 - 快捷方式设置](./practical_editor.assets/practical_editor_symlink.png)
 
-随后，前往 `Stellaris\previewer_assets` 文件夹内，打开`previewer_filefilter.txt`，将文件内的几个注释符 `#` 删除（P社默认注释了它们，不知为何）。
+随后，前往 `Stellaris\previewer_assets` 文件夹内，打开`previewer_filefilter.txt`，将文件内的几个注释符 `#` 删除（P 社默认注释了它们，不知为何）。
 
 ![preview 文件配置](./practical_editor.assets/previewer_filefilter_config.png)
 
@@ -35,6 +33,6 @@ tags: ["教程", "相关工具", "编辑器"]
 
 :::note
 
-有时候加载 Mod 粒子后试图打开编辑器窗口会直接崩溃，此时可以先打开一个原版粒子，打开窗口，再加载 Mod 粒子。或是打开 Mod 粒子，再打开原版粒子，打开编辑器，再通过左上角PREV切换上一个粒子。
+有时候加载 Mod 粒子后试图打开编辑器窗口会直接崩溃，此时可以先打开一个原版粒子，打开窗口，再加载 Mod 粒子。或是打开 Mod 粒子，再打开原版粒子，打开编辑器，再通过左上角 PREV 切换上一个粒子。
 
 :::
