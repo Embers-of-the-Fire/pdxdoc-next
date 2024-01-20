@@ -4,11 +4,13 @@ import starlightLinksValidator from "starlight-links-validator";
 import starlightBlog from "starlight-blog";
 import sidebar from "./sidebar.json";
 import authors from "./author.ts";
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 
 // https://astro.build/config
 export default defineConfig({
     markdown: {
         syntaxHighlight: false,
+        rehypePlugins: [rehypeAccessibleEmojis],
     },
     integrations: [
         starlightLinksValidator(),
@@ -25,9 +27,10 @@ export default defineConfig({
                     lang: "zh-CN",
                 },
             },
-			editLink: {
-				baseUrl: 'https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main',
-			},
+            editLink: {
+                baseUrl:
+                    "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
+            },
             components: {
                 SiteTitle: "./src/components/overrides/SiteTitle.astro",
                 MarkdownContent:

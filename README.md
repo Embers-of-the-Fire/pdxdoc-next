@@ -1,43 +1,55 @@
-# Stellaris Mod Document
+# Stellaris Mod Document 群星 Mod 制作文档
 
-Site availabile at [here](https://main--pdxdoc-next.netlify.app/).
+本仓库部署于 [pdxdoc-next @ netlify](https://main--pdxdoc-next.netlify.app/)。
 
-## Prerequisites
+## 贡献指南
 
-You have to install [pnpm](https://pnpm.io) before contributing to this project.
+本仓库使用 [pnpm](https://pnpm.io) 作为统一包管理工具。
 
-## Contribute
+### 文档部分
 
-### Documentation
+文档内容位于 `./src/content/docs/guides` 目录下。
 
-The documentation is available in [`./src/content/docs/guides`].
+如果你想要添加新的页面，在创建并编写完成后，修改 [`sidebar.json`](./sidebar.json) 并将你的文档置于合适的分类下。
 
-If you want to add new pages, after creating the file, edit [`sidebar.json`](./sidebar.json) and insert your new page's metadata.
+**注意**
 
-Note that you must reload the entire application to update the sidebar, since it's used in `astro.config.mjs` and won't be auto- or hot-reloaded.
+在修改侧边栏后，需要重启整个应用程序，因为这一配置直接被 `astro.config.mjs` 引用而无法热重载。
 
-### Blogs
+### 博客
 
-The blogs is available in [`./src/content/docs/blog`](src/content/docs/blog).
+博客内容位于 `./src/content/docs/blog` 目录下。
 
-For more information, see [Github: starlight-blog by HiDeoo](https://github.com/HiDeoo/starlight-blog).
+关于博客可选内容的更多信息，参考 [Github: starlight-blog by HiDeoo](https://github.com/HiDeoo/starlight-blog)。
 
-If you want to keep contributing or publishing blog, please add your profile to [`author.ts`](./author.ts).
-Your image should be placed in the [`./public/authors`](public/authors) folder.
+如果你想要发表博客，请将你的个人标识添加到 [`author.ts`](./author.ts) 中。你的个人头像应该放在 [`./public/authors`](./public/authors) 文件夹下。
 
-## Commands
+### 其他注意事项
 
-All commands are run from the root of the project, from a terminal:
+1.  在修改侧边栏 `sidebar.json` 或作者组 `author.ts` 后，需要重启整个应用程序，因为这些配置直接被 `astro.config.mjs` 引用而无法热重载。
+2.  文章的图片应该放置于 `.assets` 结尾的子域中，例如：<br/>
+    文章 `src/content/docs/blog/practical_editor.mdx` 的图片应放置在 `src/content/docs/blog/practical_editor.assets/` 文件夹下。
+3.  文章应配备合适的摘要，文件名不使用中文或中文拼音。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm run build`           | Build your production site to `./dist/`          |
-| `pnpm run preview`         | Preview your build locally, before deploying     |
-| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+## Emoji
 
-## Want to learn more?
+当前，Starlight/Astro 并不支持 `:emoji_code:` 形式调用 emoji，需要复制原文。
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+以下是常见 emoji 列表：[Github Gist: Emoji List](https://gist.github.com/rxaviers/7360908)。
+
+## 构建命令
+
+所有命令应该在终端中在项目根目录下运行：
+
+| 命令                       | 行为                                                   |
+| :------------------------- | :----------------------------------------------------- |
+| `pnpm install`             | 下载依赖                                               |
+| `pnpm run dev`             | 在 `localhost:4321` 处启动开发服务器                   |
+| `pnpm run build`           | 将站点构建于 `./dist/` 目录下                          |
+| `pnpm run preview`         | 在部署前本地预览站点                                   |
+| `pnpm run astro ...`       | 运行 Astro 命令行程序，例如 `astro add`、`astro check` |
+| `pnpm run astro -- --help` | 获取 Astro 命令行程序的帮助                            |
+
+## 致谢
+
+本站点基于 [Astro](https://astro.build) 构建，UI 配置基于 [Starlight](https://starlight.astro.build)。
