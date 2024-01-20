@@ -21,6 +21,11 @@ const authors: Record<string, blogAuthorSchema> = {
         title: "Modder[Admin]",
         picture: "/authors/Eddy.jpg",
     },
+    EnderAnswer: {
+        name: "EnderAnswer",
+        title: "Modder[Admin]",
+        picture: "/authors/EnderAnswer.jpg",
+    }
 };
 
 export default authors;
