@@ -1,0 +1,14 @@
+{
+    "default": true,
+    "MD033": {
+        "allowed_elements": [
+            "details",
+            "summary",
+            "span",
+            "br"
+        ]
+    },
+    "MD013": {
+        "line_length": 120
+    }
+}
