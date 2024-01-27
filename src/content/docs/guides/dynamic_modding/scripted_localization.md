@@ -29,7 +29,7 @@ auth_democratic:0 "Auth Democratic"
 auth_oligarchic:0 "Auth Oligarchic"
 ```
 
-随后，在你需要使用这个定义的时候，使用` [<scope>.GetAuthorityName]` 来调用，例如，对于一个具有 `auth_democratic` 的国家来说：
+随后，在你需要使用这个定义的时候，使用 `[<scope>.GetAuthorityName]` 来调用，例如，对于一个具有 `auth_democratic` 的国家来说：
 
 ```yaml
 your_key:0 "Auth: [this.GetAuthorityName]"
@@ -41,9 +41,8 @@ your_key:0 "Auth: [this.GetAuthorityName]"
 Auth: Auth Democratic
 ```
 
-
 :::note[提示]
 
-虽然此处 `scripted_loc` 使用的是 Country 域，但 `scripted_loc` 本身可以是任何域，只要调用时使用的` <scope>` 可以让 `text` 中的 `trigger` 运行即可。
+虽然此处 `scripted_loc` 使用的是 Country 域，但 `scripted_loc` 本身可以是任何域，只要调用时使用的 `<scope>` 可以让 `text` 中的 `trigger` 运行即可。
 
 :::
