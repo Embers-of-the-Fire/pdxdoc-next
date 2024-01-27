@@ -5,7 +5,9 @@
             "details",
             "summary",
             "span",
-            "br"
+            "br",
+            "kbd",
+            "font"
         ]
     },
     "MD013": {
