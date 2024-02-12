@@ -3,7 +3,7 @@ title: 如何安装新的触发器结构
 date: 2023-07-03
 authors:
     - Eddy
-excerpt: 粒子编辑器的配置与基本使用
+excerpt: 新触发器结构的安装和使用
 tags: ["教程", "模组", "触发器"]
 ---
 
