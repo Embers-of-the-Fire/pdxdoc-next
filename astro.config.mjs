@@ -50,7 +50,7 @@ export default defineConfig({
                 {
                     tag: "script",
                     attrs: {
-                        src: "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js",
+                        src: "/scripts/prism.min.js",
                         defer: true,
                     },
                 },

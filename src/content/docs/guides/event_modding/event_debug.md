@@ -22,13 +22,13 @@ sidebar:
 
 ```pdx
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
 
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 }
 ```
@@ -39,7 +39,7 @@ country_event = {
 
 ```odx
 option = {
-    name = test_event.0.aa
+    name = test_event.1.aa
     allow = {
         fail_text = {
             text = Test
@@ -57,7 +57,7 @@ Wiki 说明这要用于 `TriggerDescription` （一种 Desc 的形式，带条�
 
 ```pdx
 option = {
-    name = test_event.0.aa
+    name = test_event.1.aa
     allow = {
         custom_tooltip = {
             fail_text = test
@@ -93,7 +93,7 @@ option = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 
@@ -102,7 +102,7 @@ country_event = {
     }
 }
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 

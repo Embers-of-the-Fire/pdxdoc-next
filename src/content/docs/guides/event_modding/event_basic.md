@@ -10,7 +10,7 @@ sidebar:
 namespace = test_event
 
 country_event = {
-    id = test_event.0
+    id = test_event.1
 }
 ```
 
@@ -37,9 +37,9 @@ country_event = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -54,7 +54,7 @@ country_event = {
     # }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 }
 ```
@@ -86,9 +86,9 @@ MTTH，平均发生时间，设置该触发模式之后，Event 将会在一个�
 
 ```pdx
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     mean_time_to_happen = {
         days = 50
         # months = 50
@@ -96,10 +96,10 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     option = {
-        name = test_event.0.bb
+        name = test_event.1.bb
     }
 }
 ```
@@ -134,16 +134,16 @@ mean_time_to_happen = {
 
 ```pdx
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     option = {
-        name = test_event.0.bb
+        name = test_event.1.bb
     }
 }
 ```
@@ -152,12 +152,12 @@ country_event = {
 
 各位写 Event 时有一种情况各位应该都遇到过：借鉴其他 Mod 或者原文件的 Event 之时，你写的 Event 和别人的明明一模一样，然后发现别人的 Event 能够触发而自己的不行。这就涉及到了 Action，这是写在 `common` 目录下 `on_actions` 文件夹中 `on_actions` 文件里的预设触发器。
 
-这些触发器都是以 `on\_` 为前缀，每一个触发器都会在满足不同情况之时进行一次触发，触发对象就是 events 里面 id 对应的 Event，比如我想要一个事件 `country_event id = test_event.0` 固定每个月触发一遍，我们可以在 Event 里边写上 `is_triggered_only = yes` ，仿照原文件格式在 common 中新建一个 on_actions 文件夹，并在其中创建一个名称随意（注意不要与原文件重名）的.txt 文件，写入以下内容：
+这些触发器都是以 `on\_` 为前缀，每一个触发器都会在满足不同情况之时进行一次触发，触发对象就是 events 里面 id 对应的 Event，比如我想要一个事件 `country_event id = test_event.1` 固定每个月触发一遍，我们可以在 Event 里边写上 `is_triggered_only = yes` ，仿照原文件格式在 common 中新建一个 on_actions 文件夹，并在其中创建一个名称随意（注意不要与原文件重名）的.txt 文件，写入以下内容：
 
 ```pdx
 on_monthly_pulse_country = {
     events = {
-        test_event.0
+        test_event.1
     }
 }
 ```
@@ -174,13 +174,13 @@ on_monthly_pulse = {
 
 该预设触发器与上述预设触发器仅仅差了一个` _country` ，但如果我们将上述事件 `country_event id = TestEvent.0` 放入其中，VSC 立刻会报错，如果你仍然要进行测试，结果将是触发失败。这就涉及到了 Event 的默认作用域，在上面我给出了各种 Event Types 的默认作用域，而同样的，Action 也同样拥有作用域(Scope)，只能够触发相同 Scpoe 的 Event，例如上述图片的 `on_monthly_pulse` 是无作用域的，因此其中 Event 的 Event Type 为 `event` ，而在我们的示例中 `on_monthly_pulse_country` 的默认作用域是 `country` ，正好对应了我们需要触发的事件 `country_event id = TestEvent.0` ，因此可以正常触发。通常来说蠢驴会在每一个触发器上方标注 Scope，如若没有标注则是没有作用域，应该采用 `event` 类型。
 
-Action 还支持随机触发，以下这个例子可以看到在每个月触发 events 的同时还会触发下面的 `random_events` ，有 1/100 的概率触发 `test_event.1` ，99/100 的概率什么也不发生。
+Action 还支持随机触发，以下这个例子可以看到在每个月触发 events 的同时还会触发下面的 `random_events` ，有 1/100 的概率触发 `test_event.2` ，99/100 的概率什么也不发生。
 
 ```pdx
 on_monthly_pulse_country = {
     random_events = {
         99 = 0
-        1 = test_event.0
+        1 = test_event.1
     }
 }
 ```
@@ -193,9 +193,9 @@ Action 之所以应用广泛，是由于种类繁多，能够满足一些特定�
 
 ```pdx
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -214,7 +214,7 @@ country_event = {
     # }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 }
 ```
@@ -251,9 +251,9 @@ test_modifier = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -271,7 +271,7 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 }
 ```
@@ -280,9 +280,9 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -303,7 +303,7 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 }
 ```
@@ -316,9 +316,9 @@ country_event = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -330,7 +330,7 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
 +       add_modifier = {
 +           modifier = test_modifier
 +       }
@@ -344,9 +344,9 @@ country_event = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -358,7 +358,7 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
 +       hidden_effect = {
             add_modifier = {
                 modifier = test_modifier
@@ -376,9 +376,9 @@ country_event = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -390,7 +390,7 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 
 +   after = {
@@ -406,9 +406,9 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -426,12 +426,12 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 
     after = {
 +       country_event = {
-+           id = test_event.1
++           id = test_event.2
 +           days = 30
 +           random = 30
 +       }
@@ -445,9 +445,9 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
-    title = test_event.0.name
-    desc = test_event.0.desc
+    id = test_event.1
+    title = test_event.1.name
+    desc = test_event.1.desc
     picture = GFX_evt_analyzing_artifacts
     location = root
     show_sound = select_click
@@ -465,12 +465,12 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
 
     after = {
         country_event = {
-            id = test_event.0
+            id = test_event.1
             days = 30
         }
     }
@@ -485,12 +485,12 @@ Effect 的数量与 Conditions 数量相当，因此我们应当多看，多用�
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     # hide_window = yes         # 是否隐藏界面
     # is_triggered_only = yes
     is_advisor_event = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
     location = root
     show_sound = select_click
     diplomatic = yes        # 是否启用外交界面
@@ -525,12 +525,12 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     option = {
-        name = test_event.0.bb
+        name = test_event.1.bb
         is_dialog_only = yes    # 是否为对话选项，点了之后不会退出事件，而是显示一行文本在描述中
-        response_text = test_event.0.bb.response    # 配合上述属性，定义回复文本的本地化Key
+        response_text = test_event.1.bb.response    # 配合上述属性，定义回复文本的本地化Key
         default_hide_option = yes   # 默认退出选项，如果是按Esc退出的事件，默认选择的选项
                                     # 不定义则默认为第一个声明的选项
     }
@@ -547,7 +547,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     title = azur_arc.0.name
     desc = azur_arc.0.desc
@@ -558,8 +558,8 @@ country_event = {
 }
 
 country_event = {
-    id = test_event.1
-    base = test_event.0
+    id = test_event.2
+    base = test_event.1
 }
 ```
 
@@ -569,7 +569,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     title = azur_arc.0.name
     desc = azur_arc.0.desc
@@ -584,15 +584,15 @@ country_event = {
 }
 
 country_event = {
-    id = test_event.1
-    base = test_event.0
+    id = test_event.2
+    base = test_event.1
 +   show_sound_clear = yes
 +   show_sound = select_colony_ship
 +   desc_clear = yes
-+   desc = test_event.1.desc
++   desc = test_event.2.desc
 +   option_clear = yes
 +   option = {
-+       name = test_event.1.aa
++       name = test_event.2.aa
 +   }
 }
 ```
@@ -602,7 +602,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     title = azur_arc.0.name
     desc = azur_arc.0.desc
@@ -633,7 +633,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     title = azur_arc.0.name
     desc = azur_arc.0.desc

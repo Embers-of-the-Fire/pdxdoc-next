@@ -15,7 +15,7 @@ sidebar:
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 
@@ -40,7 +40,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 
@@ -64,21 +64,21 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 
     immediate = {
         every_owned_planet = {
             planet_event = {
-                id = test_event.1
+                id = test_event.2
             }
         }
     }
 }
 
 planet_event = {
-    id = test_event.1
+    id = test_event.2
     hide_window = yes
     is_triggered_only = yes
 
@@ -96,7 +96,7 @@ planet_event = {
 # Action
 on_entering_battle = {
     events = {
-        test_event.0
+        test_event.1
     }
 }
 ```
@@ -104,7 +104,7 @@ on_entering_battle = {
 ```pdx
 # Event
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 
@@ -135,7 +135,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     hide_window = yes
     is_triggered_only = yes
 

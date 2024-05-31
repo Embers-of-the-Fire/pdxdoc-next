@@ -12,7 +12,7 @@ sidebar:
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     hide_window = yes
 
@@ -22,7 +22,7 @@ country_event = {
 }
 
 country_event = {
-    id = test_event.1
+    id = test_event.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -39,7 +39,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.1
+    id = test_event.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -53,7 +53,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.1
+    id = test_event.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -477,7 +477,7 @@ this 代表当前 event 的 this 作用域，这里显然是 `country` ， `tota
 namespace = test_event
 
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     hide_window = yes
 
@@ -504,43 +504,43 @@ country_event = {
 namespace = test_event
 
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     immediate = {
 
     }
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     option = {
-        name = test_event.0.bb
+        name = test_event.1.bb
     }
     option = {
-        name = test_event.0.cc
+        name = test_event.1.cc
     }
     option = {
-        name = test_event.0.dd
+        name = test_event.1.dd
     }
     option = {
-        name = test_event.0.ee
+        name = test_event.1.ee
     }
     option = {
-        name = test_event.0.ff
+        name = test_event.1.ff
     }
     option = {
-        name = test_event.0.gg
+        name = test_event.1.gg
     }
     option = {
-        name = test_event.0.hh
+        name = test_event.1.hh
     }
     option = { # 刷新
-        name = test_event.0.00
+        name = test_event.1.00
     }
     option = { # 退出
-        name = test_event.0.01
+        name = test_event.1.01
     }
 }
 ```
@@ -549,10 +549,10 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     immediate = {
 +       random_owned_leader = {
@@ -562,14 +562,14 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     ...
     option = { # 刷新
-        name = test_event.0.00
+        name = test_event.1.00
     }
     option = { # 退出
-        name = test_event.0.01
+        name = test_event.1.01
     }
 }
 ```
@@ -578,10 +578,10 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     immediate = {
         random_owned_leader = {
@@ -597,19 +597,19 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
     }
     ...
     # 刷新
     option = {
-        name = test_event.0.00
+        name = test_event.1.00
 +       trigger = {
 +           exists = event_target:select_leader_8
 +       }
     }
     # 退出
     option = {
-        name = test_event.0.01
+        name = test_event.1.01
     }
 
 +   after = {
@@ -627,10 +627,10 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     immediate = {
         random_owned_leader = {
@@ -653,7 +653,7 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
 +       trigger = {
 +           exists = event_target:select_leader_1
 +       }
@@ -661,14 +661,14 @@ country_event = {
     ...
     # 刷新
     option = {
-        name = test_event.0.00
+        name = test_event.1.00
         trigger = {
             exists = event_target:select_leader_8
         }
     }
     # 退出
     option = {
-        name = test_event.0.01
+        name = test_event.1.01
     }
 
     after = {
@@ -686,10 +686,10 @@ country_event = {
 
 ```diff
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
-    title = test_event.0.name
-    desc = test_event.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     immediate = {
         random_owned_leader = {
@@ -709,7 +709,7 @@ country_event = {
     }
 
     option = {
-        name = test_event.0.aa
+        name = test_event.1.aa
         trigger = {
             exists = event_target:select_leader_1
         }
@@ -720,19 +720,19 @@ country_event = {
 +       }
     }
     option = {
-        name = test_event.0.00
+        name = test_event.1.00
         trigger = {
             exists = event_target:select_leader_8
         }
 +       hidden_effect = {
 +           country_event = {
-+               id = test_event.0
++               id = test_event.1
 +           }
 +       }
     }
 
     option = {
-        name = test_event.0.01
+        name = test_event.1.01
     }
 
     after = {
@@ -749,16 +749,16 @@ country_event = {
 最后进行本地化，我们需要让玩家知道我们所获取的 Target 到底是谁，因此我们需要显示出 Target 的名称，此时我们需要采用支架命令：
 
 ```yaml
-test_event.0.aa:0 "[select_leader_1.GetName]"
-test_event.0.bb:0 "[select_leader_2.GetName]"
-test_event.0.cc:0 "[select_leader_3.GetName]"
-test_event.0.dd:0 "[select_leader_4.GetName]"
-test_event.0.ee:0 "[select_leader_5.GetName]"
-test_event.0.ff:0 "[select_leader_6.GetName]"
-test_event.0.gg:0 "[select_leader_7.GetName]"
-test_event.0.hh:0 "[select_leader_8.GetName]"
-test_event.0.00:0 "刷新"
-test_event.0.01:0 "返回"
+test_event.1.aa:0 "[select_leader_1.GetName]"
+test_event.1.bb:0 "[select_leader_2.GetName]"
+test_event.1.cc:0 "[select_leader_3.GetName]"
+test_event.1.dd:0 "[select_leader_4.GetName]"
+test_event.1.ee:0 "[select_leader_5.GetName]"
+test_event.1.ff:0 "[select_leader_6.GetName]"
+test_event.1.gg:0 "[select_leader_7.GetName]"
+test_event.1.hh:0 "[select_leader_8.GetName]"
+test_event.1.00:0 "刷新"
+test_event.1.01:0 "返回"
 ```
 
 我们可以通过` [Target.GetName]` 获取 Target 的 `Name` 属性，即显示出其名称。
@@ -775,20 +775,20 @@ test_event.0.01:0 "返回"
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     hide_window = yes
 
     immediate = {
         save_global_event_target_as = test_target
         country_event = {
-            id = test_event.1
+            id = test_event.2
         }
     }
 }
 
 country_event = {
-    id = test_event.1
+    id = test_event.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -806,7 +806,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = test_event.0
+    id = test_event.1
     is_triggered_only = yes
     hide_window = yes
 
@@ -816,7 +816,7 @@ country_event = {
 }
 
 country_event = {
-    id = test_event.1
+    id = test_event.2
     is_triggered_only = yes
     hide_window = yes
 
