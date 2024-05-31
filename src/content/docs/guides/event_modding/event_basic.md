@@ -549,11 +549,11 @@ country_event = {
 country_event = {
     id = test_event.1
     is_triggered_only = yes
-    title = azur_arc.0.name
-    desc = azur_arc.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 
     option = {
-        name = azur_arc.0.aa
+        name = test_event.1.aa
     }
 }
 
@@ -571,12 +571,12 @@ country_event = {
 country_event = {
     id = test_event.1
     is_triggered_only = yes
-    title = azur_arc.0.name
-    desc = azur_arc.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
 +   show_sound = select_click
 
     option = {
-        name = azur_arc.0.aa
+        name = test_event.1.aa
     }
 +   abort_effect = {
 +
@@ -604,8 +604,8 @@ country_event = {
 country_event = {
     id = test_event.1
     is_triggered_only = yes
-    title = azur_arc.0.name
-    desc = azur_arc.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
     immediate = {
         set_country_flag = test_flag
     }
@@ -618,7 +618,7 @@ country_event = {
         }
     }
     option = {
-        name = azur_arc.0.aa
+        name = test_event.1.aa
         add_resource = {
             minerals = -100
         }
@@ -635,14 +635,14 @@ country_event = {
 country_event = {
     id = test_event.1
     is_triggered_only = yes
-    title = azur_arc.0.name
-    desc = azur_arc.0.desc
+    title = test_event.1.name
+    desc = test_event.1.desc
     major = yes
     major_trigger = {
 
     }
     option = {
-        name = azur_arc.0.aa
+        name = test_event.1.aa
     }
 }
 ```

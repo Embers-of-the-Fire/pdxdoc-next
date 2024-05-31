@@ -77,7 +77,7 @@ country_event = {
 ```pdx
 on_tech_increased = {
     events = {
-        count_pop.0
+        count_pop.1
     }
 }
 ```
@@ -88,7 +88,7 @@ on_tech_increased = {
 namespace = count_pop
 
 country_event = {
-    id = count_pop.0
+    id = count_pop.1
     is_triggered_only = yes
     hide_window = yes
 
@@ -113,7 +113,7 @@ country_event = {
 ```pdx
 on_yearly_pulse = {
     events = {
-        count_pop.1
+        count_pop.2
     }
 }
 ```
@@ -122,7 +122,7 @@ on_yearly_pulse = {
 
 ```pdx
 event = {
-    id = count_pop.1
+    id = count_pop.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -135,13 +135,13 @@ event = {
 }
 ```
 
-设定上一步 `event id=count_pop.1` 的效果为：让第一个完成“灵能理论”的国家触发另一个 `country_event id=count_pop.2` 。该 `event id=count_pop.2` 的效果为：迁移随机一个星球上一半的人口到首都。
+设定上一步 `event id=count_pop.2` 的效果为：让第一个完成“灵能理论”的国家触发另一个 `country_event id=count_pop.3` 。该 `event id=count_pop.3` 的效果为：迁移随机一个星球上一半的人口到首都。
 
-先补充完 `event id=count_pop.1` ，通过 `every_country` 遍历国家，再通过我们之前设置的 `country_flag` 筛选国家，然后让筛选出的国家执行接下来的事件：
+先补充完 `event id=count_pop.2` ，通过 `every_country` 遍历国家，再通过我们之前设置的 `country_flag` 筛选国家，然后让筛选出的国家执行接下来的事件：
 
 ```diff
 event = {
-    id = count_pop.1
+    id = count_pop.2
     is_triggered_only = yes
     hide_window = yes
 
@@ -158,18 +158,18 @@ event = {
 +               has_country_flag = research_psionic_theory
 +           }
 +           country_event = {
-+               id = count_pop.2
++               id = count_pop.3
 +           }
 +       }
 +   }
 }
 ```
 
-然后写出 `event id=count_pop.2` 的框架：
+然后写出 `event id=count_pop.3` 的框架：
 
 ```pdx
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -183,7 +183,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -199,7 +199,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -220,7 +220,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -249,7 +249,7 @@ country_event = {
 
 ```pdx
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -267,7 +267,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -297,7 +297,7 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
     hide_window = yes
 
@@ -331,10 +331,10 @@ country_event = {
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
-    title = count_pop.2.name
-    desc = count_pop.2.desc
+    title = count_pop.3.name
+    desc = count_pop.3.desc
 
     immediate = {
         random_owned_planet = {
@@ -388,16 +388,16 @@ country_event = {
 
 3. 自定义指令类：形式为：` [<Scope>.<Loc-Name>]` ，Scope 表示需要执行 Loc-Name 的 Scope，Loc-Name 为之定义指令，可在 `common/scripted_loc` 文件夹下定义。
 
-关于以上内容的 2 ，3 点将会在之后的章节中进行详细叙述，现在仅仅需要掌握第一点即可，现在我们来改造一下我们上方已经完成的 Event，将最后一个 `Event id = Count_Pop.2` ，改造成一个可见 Event，并且在文本当中显示出迁移的人口数量。我们此时需要改变设置 Variable 的 Scope，从之前的直接在 Planet 当中设置 Variable 变成在 root（此处 root 为 Country）中设置 Variable，以方便我们采用支架命令进行显示。
+关于以上内容的 2 ，3 点将会在之后的章节中进行详细叙述，现在仅仅需要掌握第一点即可，现在我们来改造一下我们上方已经完成的 Event，将最后一个 `Event id = count_pop.3` ，改造成一个可见 Event，并且在文本当中显示出迁移的人口数量。我们此时需要改变设置 Variable 的 Scope，从之前的直接在 Planet 当中设置 Variable 变成在 root（此处 root 为 Country）中设置 Variable，以方便我们采用支架命令进行显示。
 
 而且我们需要注意的是，之前我们所写的 Event 逻辑其实是有问题的，如果这个 Event 需要不断的启动，我们的变量在使用完之后并为归 0，将会导致下一次进行人口统计的失误，因此我们需要将变量手动置为 0。
 
 ```diff
 country_event = {
-    id = count_pop.2
+    id = count_pop.3
     is_triggered_only = yes
-    title = count_pop.2.name
-    desc = count_pop.2.desc
+    title = count_pop.3.name
+    desc = count_pop.3.desc
 
     immediate = {
         random_owned_planet = {
@@ -459,8 +459,8 @@ country_event = {
 现在我们来看看本地化（此处我没有写 option，因为没必要）：
 
 ```yaml
-count_pop.2.name:0 "迁移人口"
-count_pop.2.desc:0 "[this.total_pop]"
+count_pop.3.name:0 "迁移人口"
+count_pop.3.desc:0 "[this.total_pop]"
 ```
 
 this 代表当前 event 的 this 作用域，这里显然是 `country` ， `total_pop` 表示将会检索该作用域中同名的 Variable 并将其显示出来，注意这里的作用域一定要是 Variable 的所在 Scope，不然将会显示为空（如果变量为 0 也会显示为空，可以采用 `scripted_loc` 进行补偿显示）。
