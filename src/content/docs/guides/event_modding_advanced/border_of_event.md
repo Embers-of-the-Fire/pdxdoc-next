@@ -32,20 +32,20 @@ sidebar:
 > 然后我们的主人公——某个萌新 modder 也想要写一个强力无比的天灾，他想到：“只要把玩家灭国，天灾就无敌了！”最后写下了这个“天灾”。
 
 ```pdx
-country_event = {      # 如你所见，这是一个*国家*事件，也就是这个事件的ROOT scope为国家
-    id = xskiper_teach.0    # 事件ID
-    title = "天灾！"    # 槽点1：使用引号直接输入文字
+country_event = {           # 如你所见，这是一个*国家*事件，也就是这个事件的ROOT scope为国家
+    id = xskiper_teach.0    # 槽点1：使用 0 作为 ID
+    title = "天灾！"         # 槽点2：使用引号直接输入文字
     desc = "哈哈哈，我是天灾！"
 
     is_triggered_only = yes # 这个事件只能由触发器触发，例如 `effect` 、 `on_action` 文件夹中的触发器等
 
-    trigger = {         # 事件的触发条件，但控制台触发事件时会无视这些条件强行触发
-        days_passed > 15    # 这是这个事件唯一的condition，即开局15天以上才能触发
+    trigger = {             # 事件的触发条件，但控制台触发事件时会无视这些条件强行触发
+        days_passed > 15    # 这是这个事件唯一的 condition，即开局 15 天以上才能触发
     }
 
-    option = {          # 这是事件的唯一选项
+    option = {              # 这是事件的唯一选项
         name = "是天灾！AWSL!"
-        destroy_country = yes   # 这是这个事件唯一的effect语句，消灭触发者的国家
+        destroy_country = yes   # 这是这个事件唯一的 effect 语句，消灭触发者的国家
     }
 }
 ```
