@@ -1,5 +1,5 @@
 ---
-title: 议程(Archaeology)
+title: 考古(Archaeology)
 ---
 
 ## 小型文物活动(artifact_actions)
