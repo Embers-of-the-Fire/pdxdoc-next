@@ -21,14 +21,6 @@ const links: Link[] = [
         title: "博客",
         value: "/blog",
     },
-    // {
-    //     title: "References",
-    //     value: "/references",
-    // },
-    // {
-    //     title: "About",
-    //     value: "/about",
-    // },
 ];
 ---
 
@@ -53,23 +45,6 @@ const links: Link[] = [
         {links.map((link) => <a href={link.value}>{link.title}</a>)}
     </div>
 </>
-
-<!-- <script>
-    class StarlightLanguageSelect extends HTMLElement {
-        constructor() {
-            super();
-            const select = this.querySelector("select");
-            if (select) {
-                select.addEventListener("change", (e) => {
-                    if (e.currentTarget instanceof HTMLSelectElement) {
-                        window.location.pathname = e.currentTarget.value;
-                    }
-                });
-            }
-        }
-    }
-    customElements.define("starlight-select", StarlightLanguageSelect);
-</script> -->
 
 <style>
     .desktop {

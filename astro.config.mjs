@@ -1,11 +1,12 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightLinksValidator from "starlight-links-validator";
-import starlightBlog from "starlight-blog";
+import starlightImageZoomPlugin from "starlight-image-zoom";
+import starlightSidebarTopicsPlugin from "starlight-sidebar-topics";
+import starlightBlogPlugin from "starlight-blog";
 import sidebar from "./sidebar.json";
 import authors from "./author.ts";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
-import starlightImageZoom from "starlight-image-zoom";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +24,6 @@ export default defineConfig({
             },
             defaultLocale: "root",
             expressiveCode: false,
-            plugins: [starlightBlog({ authors }), starlightImageZoom()],
             locales: {
                 root: {
                     label: "简体中文",
@@ -35,14 +35,48 @@ export default defineConfig({
                     "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
             },
             components: {
-                SiteTitle: "./src/components/overrides/SiteTitle.astro",
+                // SiteTitle: "./src/components/overrides/SiteTitle.astro",
                 ContentPanel: "./src/components/overrides/ContentPanel.astro",
                 MarkdownContent:
                     "./src/components/overrides/MarkdownContent.astro",
-                // Sidebar: "starlight-blog/overrides/Sidebar.astro",
+                Sidebar: "starlight-sidebar-topics/overrides/Sidebar.astro",
                 Footer: "./src/components/overrides/Footer.astro",
             },
-            sidebar: sidebar,
+            // sidebar: sidebar,
+            plugins: [
+                starlightBlogPlugin({ authors }),
+                starlightImageZoomPlugin(),
+                starlightSidebarTopicsPlugin([
+                    {
+                        label: "Mod 教程",
+                        icon: "open-book",
+                        link: "/guides/",
+                        items: sidebar,
+                    },
+                    {
+                        label: "博客",
+                        icon: "bars",
+                        link: "/blog/",
+                        id: "blog",
+                        items: [{
+                            "label": "Blog",
+                            "link": "/blog/",
+                        }]
+                    },
+                    {
+                        label: "改动日志",
+                        icon: "information",
+                        link: "/changelog",
+                        items: [{
+                            "label": "改动日志",
+                            "link": "/changelog/",
+                        }, {
+                            "label": "改动日志（旧版）",
+                            "link": "/changelog/outdated/",
+                        }]
+                    }
+                ]),
+            ],
             logo: { src: "./src/assets/smglogo.webp" },
             head: [
                 {
