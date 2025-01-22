@@ -1,0 +1,18 @@
+{
+    "starlightBlog.authors.count_one": "{{count}} 篇由 {{author}} 创作的文章",
+    "starlightBlog.authors.count_other": "{{count}} 篇由 {{author}} 创作的文章",
+    "starlightBlog.pagination.prev": "更新的文章",
+    "starlightBlog.pagination.next": "更旧的文章",
+    "starlightBlog.post.lastUpdate": " - 上次更新于：{{date}}",
+    "starlightBlog.post.draft": "草稿",
+    "starlightBlog.post.featured": "亮点",
+    "starlightBlog.post.tags": "标签：",
+    "starlightBlog.sidebar.all": "全部文章",
+    "starlightBlog.sidebar.featured": "亮点文章",
+    "starlightBlog.sidebar.recent": "近期文章",
+    "starlightBlog.sidebar.tags": "标签",
+    "starlightBlog.sidebar.authors": "作者",
+    "starlightBlog.sidebar.rss": "RSS",
+    "starlightBlog.tags.count_one": "{{count}} 篇具有标签 “{{tag}}” 的文章",
+    "starlightBlog.tags.count_other": "{{count}} 篇具有标签 “{{tag}}” 的文章"
+}

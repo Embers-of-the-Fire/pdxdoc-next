@@ -84,7 +84,7 @@ spriteType = {
 
 将其改成为：
 
-```diff
+```diff-pdx
 spriteType = {
     name = "GFX_army_icons"
     textureFile = "gfx/interface/planetview/army_icon.dds"
