@@ -35,14 +35,12 @@ export default defineConfig({
                     "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
             },
             components: {
-                // SiteTitle: "./src/components/overrides/SiteTitle.astro",
                 ContentPanel: "./src/components/overrides/ContentPanel.astro",
                 MarkdownContent:
                     "./src/components/overrides/MarkdownContent.astro",
                 Sidebar: "starlight-sidebar-topics/overrides/Sidebar.astro",
                 Footer: "./src/components/overrides/Footer.astro",
             },
-            // sidebar: sidebar,
             plugins: [
                 starlightBlogPlugin({ authors }),
                 starlightImageZoomPlugin(),
