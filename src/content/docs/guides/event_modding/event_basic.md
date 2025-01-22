@@ -247,7 +247,7 @@ test_modifier = {
 
 在 Event 启动之时立刻执行的 Effect，添加修正的方法很简单，直接采用 `add_modifier` （ `add_modifer` 语句能够指定一个参数用来限定修正存在的时间，如果省略则默认是无限时间，见图二）语句并指定修正名称便可，如若 Static Modifer 写入正确的话，VSC 将会有自动提示，如若未正确写入 Static Modifer，VSC 将会报错。由于该 Event 的默认作用域是 county，因此执行完这条语句之后将会给国家添加一个名为 `test_modifier` 的修正（未本地化的情况下）
 
-```diff
+```diff-pdx
 namespace = test_event
 
 country_event = {
@@ -278,7 +278,7 @@ country_event = {
 
 可以规定添加修正的时间，以下展示了添加时间为 360 天的修正 Effect：
 
-```diff
+```diff-pdx
 country_event = {
     id = test_event.1
     title = test_event.1.name
@@ -312,7 +312,7 @@ country_event = {
 
 有时候你想要的并不是瞬间执行，而是想要能够通过不同选项选触发不同的效果，幸运的是，option 可以执行 Effect，因此我们只需要稍微改动一下就好了，显而易见的是当点击第二个选项的时候才会添加修正。
 
-```diff
+```diff-pdx
 namespace = test_event
 
 country_event = {
@@ -340,7 +340,7 @@ country_event = {
 
 当然，这里有个瑕疵，如果你把鼠标放到第二个选项上，会自动显示出一行文本提示你点击后将会发生什么，比如该处将会提示添加一个修正到国家，我们有时候不期望有这样的文本，此时我们可以稍微改动一下，在 `add_modifier` 外面再套一层 `hidden_effect` ，这样就能够将 Effect 隐藏了：
 
-```diff
+```diff-pdx
 namespace = test_event
 
 country_event = {
@@ -372,7 +372,7 @@ country_event = {
 
 我们有时候并不想在事件启动之时触发 Effect，而是在点击 option 之后进行一些 Effect，after 便可以满足我们，除了执行顺序不同之外，after 与 immediate 执行 Effect 没有什么区别。
 
-```diff
+```diff-pdx
 namespace = test_event
 
 country_event = {
@@ -404,7 +404,7 @@ country_event = {
 启动游戏，测试 Event 是否能够正常触发，启动，实现效果。
 上文 Trigger 部分的 `is_triggered_only` 分支提到了 Effect 是可以作为触发器触发 Event 的，因此我们可以继续改装一下我们的 Event，使之能够在选完某个选项之后触发另一个 Event `country_event id = TestEvent.1` ：
 
-```diff
+```diff-pdx
 country_event = {
     id = test_event.1
     title = test_event.1.name
@@ -567,7 +567,7 @@ country_event = {
 
 其中我们可以重写复制的一些属性，不过仅只有三个条目可以重写，示例如下：
 
-```diff
+```diff-pdx
 country_event = {
     id = test_event.1
     is_triggered_only = yes

@@ -188,7 +188,7 @@ country_event = {
 
 当然，我们可以先简化一下代码：
 
-```diff
+```diff-pdx
 country_event = {
     id = xskiper_teach.1
     hide_window = yes   # 不显示事件窗口，直接执行效果
@@ -210,7 +210,7 @@ country_event = {
 
 然后是进行处理，我们现在能够鲨掉这个人口：
 
-```diff
+```diff-pdx
 country_event = {
     id = xskiper_teach.1
     hide_window = yes   # 不显示事件窗口，直接执行效果
