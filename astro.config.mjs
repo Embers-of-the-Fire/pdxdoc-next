@@ -41,7 +41,7 @@ export default defineConfig({
 				Footer: "./src/components/overrides/Footer.astro",
 			},
 			plugins: [
-				starlightBlogPlugin({ authors }),
+				starlightBlogPlugin({ authors, title: "博客" }),
 				starlightImageZoomPlugin(),
 				starlightSidebarTopicsPlugin(sidebar),
 			],

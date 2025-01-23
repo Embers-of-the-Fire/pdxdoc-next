@@ -20,7 +20,13 @@ export const sidebar: MetaSidebar = [
     {
         label: "改动日志",
         icon: "information",
-        link: "/changelog",
+        link: "/changelog/",
         items: changelogSidebar,
+    },
+    {
+        label: "贡献",
+        icon: "add-document",
+        link: "/contribute/",
+        items: [],
     },
 ];
