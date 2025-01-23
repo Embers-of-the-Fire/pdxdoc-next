@@ -1,8 +1,6 @@
 ---
-title: Change Log
+title: 改动日志
 ---
-
-# Change Log
 
 <style>
     details {
@@ -13,7 +11,7 @@ title: Change Log
 
 ## 2025-1-22
 
-### Features
+### 新特性
 
--   Upgrade to Astro v5.0
--   Add special sidebar for topics
+-   升级到 Astro v5.0
+-   添加特殊的侧边栏导航（感谢 [`starlight-sidebar-topics`](https://github.com/HiDeoo/starlight-sidebar-topics)）

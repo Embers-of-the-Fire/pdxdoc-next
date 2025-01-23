@@ -8,9 +8,9 @@
 
 ### 文档部分
 
-文档内容位于 `./src/content/docs/guides` 目录下。
+主文档内容位于 `./src/content/docs/guides` 目录下。
 
-如果你想要添加新的页面，在创建并编写完成后，修改 [`sidebar.json`](./sidebar.json) 并将你的文档置于合适的分类下。
+如果你想要添加新的页面，在创建并编写完成后，修改侧边栏定义（位于 `src/sidebar/guides.ts` 中）并将你的文档置于合适的分类下。
 
 **注意**
 
