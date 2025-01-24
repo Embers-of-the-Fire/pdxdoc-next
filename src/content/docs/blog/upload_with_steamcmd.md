@@ -40,13 +40,13 @@ Steam CMD 官网：[SteamCMD - Valve Developer Community](https://developer.valv
     ```vdf
     "workshopitem"
     {
-        "appid" "281990" // 群星的 Steam APPID
-        "contentfolder" "C:\\StellarisMod" // MOD 文件夹的路径
-        "previewfile" "C:\\StellarisMod\\thumbnail.jpg" // MOD 封面图片路径
-        "title" "你的 MOD 名称"
-        "description" "你的 MOD 描述"
-        "changenote" "更新说明"
-        "visibility" "0" // 0 - 公开，1 - 仅限好友，2 - 私密
+        "appid"          "281990" // 群星的 Steam APPID
+        "contentfolder"  "C:\\StellarisMod" // MOD 文件夹的路径
+        "previewfile"    "C:\\StellarisMod\\thumbnail.jpg" // MOD 封面图片路径
+        "title"          "你的 MOD 名称"
+        "description"    "你的 MOD 描述"
+        "changenote"     "更新说明"
+        "visibility"     "0" // 0 - 公开，1 - 仅限好友，2 - 私密
         "publishedfield" "000" // 工坊物品 ID，自动生成，不需要手动填写
         "tags"
         {
@@ -61,13 +61,13 @@ Steam CMD 官网：[SteamCMD - Valve Developer Community](https://developer.valv
     ```vdf
     "workshopitem"
     {
-        "appid" "281990"
-        "contentfolder" "F:\SteamLibrary\mod\my_stallaris_mod\a\Sample\Sample\paks"
-        "previewfile" "F:\SteamLibrary\mod\my_stallaris_mod\a\Sample\Sample\images\1.png"
-        "visibility" "0"
-        "title" "二段宇宙创生"
-        "description" "描述"
-        "changenote" "Initial release"
+        "appid"          "281990"
+        "contentfolder"  "F:\\SteamLibrary\\mod\\my_stallaris_mod\\a\\Sample\\Sample\\paks"
+        "previewfile"    "F:\\SteamLibrary\\mod\\my_stallaris_mod\\a\\Sample\\Sample\\images\\1.png"
+        "visibility"     "0"
+        "title"          "二段宇宙创生"
+        "description"    "描述"
+        "changenote"     "Initial release"
         "publishedfield" "3412937963"
     }
     ```
