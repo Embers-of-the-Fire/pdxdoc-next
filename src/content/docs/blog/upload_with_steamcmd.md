@@ -5,6 +5,7 @@ authors:
      - 为梦而生
 excerpt: 使用 SteamCMD 上传 Mod 到 Steam 工坊，不使用 Stellaris 游戏启动器。
 tags: ["教程", "模组", "相关工具", "发布"]
+featured: true
 ---
 
 ## 1. 下载并安装 Steam CMD
