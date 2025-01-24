@@ -5,6 +5,7 @@ authors:
     - embers-of-the-fire
 excerpt: 新站点事宜与贡献指南
 tags: ["设计理念", "更新"]
+featured: true
 ---
 
 鉴于 Docsify 功能的局限性，本站迁移至当前站点。

@@ -5,6 +5,7 @@ authors:
     - 雪丶我
 excerpt: IDEA 下载安装与 Paradox 插件配置教程。
 tags: ["教程", "相关工具", "编辑器", "IDE"]
+featured: true
 ---
 
 ## 第一步：下载IDEA
