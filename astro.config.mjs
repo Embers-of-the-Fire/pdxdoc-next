@@ -82,6 +82,12 @@ export default defineConfig({
 				{
 					tag: "script",
 					attrs: {
+						src: "/scripts/prism-vdf.min.js",
+					},
+				},
+				{
+					tag: "script",
+					attrs: {
 						src: "/scripts/prism-diff.min.js",
 					},
 				},
