@@ -18,7 +18,7 @@ tags: ["教程", "模组", "相关工具", "模型"]
 
 如下图是一个没有动画的奇怪的模型，以及带有骨骼的大纲视图。其中每个活动部件都由一个关节（joint）控制，要随部件活动的定位器（locator）都放在对应的关节下。
 
-![模型外观](./animation_export.assets/model_outlook.png)
+![模型外观](../../../assets/blog/animation_export.assets/model_outlook.png)
 
 <span style="
 width: 100%; align-items: center; font-size: 0.75 rem;
@@ -27,9 +27,9 @@ display: flex; flex-direction: row; justify-content: center;
 模型外观
 </span>
 
-![骨骼-上半部分](./animation_export.assets/skeleton_1.png)
+![骨骼-上半部分](../../../assets/blog/animation_export.assets/skeleton_1.png)
 
-![骨骼-下半部分](./animation_export.assets/skeleton_2.png)
+![骨骼-下半部分](../../../assets/blog/animation_export.assets/skeleton_2.png)
 
 <span style="
 width: 100%; align-items: center; font-size: 0.75 rem;
@@ -47,16 +47,16 @@ display: flex; flex-direction: row; justify-content: center;
 （其他部分其实也有没有动画的，比如 `Zhuangjia` ，也可以和前三个一起导出，不过制作的时候不知道未来要不要动于是就没塞进来）
 ，与 `rootcenter` 关节绑定蒙皮。其余部分不绑定蒙皮。
 
-![需要绑定蒙皮的部分，图中不包含碰撞箱模型](./animation_export.assets/mask_part.png)
+![需要绑定蒙皮的部分，图中不包含碰撞箱模型](../../../assets/blog/animation_export.assets/mask_part.png)
 
 ## 导出模型
 
 随后删除除了刚才绑定蒙皮的 `ZhuTiQian` 、`ZhuTiZhong`、`ZhuTiHou` 以外的所有模型，
 即 `Zhuangjia`、`FuYiA`、`FuYiB`、`FuYiC`、`FuYi_D`……，得到如下模型（大纲视图）。
 
-![骨骼-导出后-上半部分](./animation_export.assets/skeleton_after_1.png)
+![骨骼-导出后-上半部分](../../../assets/blog/animation_export.assets/skeleton_after_1.png)
 
-![骨骼-导出后-下半部分](./animation_export.assets/skeleton_after_2.png)
+![骨骼-导出后-下半部分](../../../assets/blog/animation_export.assets/skeleton_after_2.png)
 
 <span style="
 width: 100%; align-items: center; font-size: 0.75 rem;
