@@ -40,7 +40,12 @@ const authors: Record<string, blogAuthorSchema> = {
         name: "雪丶我",
         title: "Modder",
         picture: "/authors/雪丶我.jpg",
-    }
+    },
+    为梦而生: {
+        name: "为梦而生",
+        title: "Modder",
+        picture: "/authors/为梦而生.jpg",
+    },
 };
 
 export default authors;
