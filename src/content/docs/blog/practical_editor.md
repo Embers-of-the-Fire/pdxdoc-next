@@ -21,15 +21,15 @@ tags: ["教程", "相关工具", "编辑器"]
 
 如果你的 Mod 文件夹位于其他位置，`-mount`处的路径也需要作出相应修改来指向正确位置。
 
-![粒子编辑器 - 快捷方式设置](./practical_editor.assets/practical_editor_symlink.png)
+![粒子编辑器 - 快捷方式设置](../../../assets/blog/practical_editor.assets/practical_editor_symlink.png)
 
 随后，前往 `Stellaris\previewer_assets` 文件夹内，打开`previewer_filefilter.txt`，将文件内的几个注释符 `#` 删除（P 社默认注释了它们，不知为何）。
 
-![preview 文件配置](./practical_editor.assets/previewer_filefilter_config.png)
+![preview 文件配置](../../../assets/blog/practical_editor.assets/previewer_filefilter_config.png)
 
 然后就可以打开粒子编辑器并使用了，部分重要按钮参考下图：
 
-![粒子编辑器 - 主页](./practical_editor.assets/practical_editor_homepage.png)
+![粒子编辑器 - 主页](../../../assets/blog/practical_editor.assets/practical_editor_homepage.png)
 
 :::note
 
