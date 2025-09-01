@@ -15,17 +15,15 @@ dlc_load.json 的内容包含 dlc 与 mod 的启用/禁用， dlc 为黑名单�
 
 ## 几个重要文件路径
 
-1.群星游戏根目录，即 steam库\steamapps\common\Stellaris
-&emsp;&emsp;这个目录从 steam 游戏库内右键 stellaris 的选项-管理-浏览本地文件可直接跳转。
-&emsp;&emsp;存放游戏本体程序，不包括存档。
-
-2.群星文档文件夹目录，即 文档\Paradox Interactive\Stellaris
-&emsp;&emsp;这个目录从侧边栏的文档一路打开文件夹可跳转。
-&emsp;&emsp;存放存档，本地mod，**远程mod概述文件**(一般是文档\Paradox Interactive\Stellaris\mod目录下所有后缀为.mod的文件)，启动器播放集数据库。
-
-3.群星创意工坊文件夹目录，即 steam库\steamapps\workshop\content\281990
-&emsp;&emsp;这个目录从游戏根目录往上两级，然后一路打开文件夹可跳转。
-&emsp;&emsp;存放从steam创意工坊订阅的mod。
+1.  群星游戏根目录，即 steam库\steamapps\common\Stellaris  
+    这个目录从 steam 游戏库内右键 stellaris 的选项-管理-浏览本地文件可直接跳转。  
+    存放游戏本体程序，不包括存档。
+2.  群星文档文件夹目录，即 `文档\Paradox Interactive\Stellaris`  
+    这个目录从侧边栏的文档一路打开文件夹可跳转。  
+    存放存档、本地mod、**远程mod概述文件**（一般是 `文档\Paradox Interactive\Stellaris\mod` 目录下所有后缀为 `.mod` 的文件），启动器播放集数据库。
+3.  群星创意工坊文件夹目录，即 `steam库\steamapps\workshop\content\281990`  
+    这个目录从游戏根目录往上两级，然后一路打开文件夹可跳转。  
+    存放从steam创意工坊订阅的mod。
 
 ## mod概述文件的概念
 
