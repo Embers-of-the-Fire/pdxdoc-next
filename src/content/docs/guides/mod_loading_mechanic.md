@@ -4,7 +4,7 @@ title: 游戏的MOD读取机制
 
 ## 游戏mod的读取
 
-&emsp;&emsp;群星一般情况下由游戏根目录下 stellaris.exe 读取群星文档文件夹目录下的 dlc_load.json 。
+群星一般情况下由游戏根目录下 `stellaris.exe` 读取群星文档文件夹目录下的 `dlc_load.json`。
 dlc_load.json 的内容包含 dlc 与 mod 的启用/禁用， dlc 为黑名单机制， mod 为白名单机制，以**远程mod概述文件**的相对路径作为白名单的判定，例如以下的某次启动游戏时 dlc_load.json 里的内容:
 
 ```json
