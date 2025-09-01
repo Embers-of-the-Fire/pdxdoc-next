@@ -17,6 +17,10 @@ export const guidesSidebar: Sidebar = [
                 link: "guides/your_first_mod/",
             },
             {
+                label: "MOD 加载机制",
+                link: "guides/mod_loading_mechanic",
+            },
+            {
                 label: "MOD 基础知识与准备",
                 link: "guides/mod_basic/",
             },
