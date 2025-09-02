@@ -1,13 +1,12 @@
-import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightLinksValidator from "starlight-links-validator";
-import starlightImageZoomPlugin from "starlight-image-zoom";
-import starlightSidebarTopicsPlugin from "starlight-sidebar-topics";
-import starlightBlogPlugin from "starlight-blog";
-// import sidebar from "./sidebar.json";
-import { sidebar } from "./src/sidebar/sidebar.ts";
-import authors from "./author.ts";
+import { defineConfig } from "astro/config";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
+import starlightBlogPlugin from "starlight-blog";
+import starlightImageZoomPlugin from "starlight-image-zoom";
+import starlightLinksValidator from "starlight-links-validator";
+import starlightSidebarTopics from "starlight-sidebar-topics";
+import authors from "./author.ts";
+import { sidebar } from "./src/sidebar/sidebar.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,9 +19,13 @@ export default defineConfig({
 		starlightLinksValidator(),
 		starlight({
 			title: "Stellaris Mod 教程",
-			social: {
-				github: "https://github.com/embers-of-the-fire/pdxdoc-next",
-			},
+			social: [
+				{
+					icon: "github",
+					label: "GitHub",
+					href: "https://github.com/embers-of-the-fire/pdxdoc-next",
+				},
+			],
 			defaultLocale: "root",
 			expressiveCode: false,
 			locales: {
@@ -32,18 +35,30 @@ export default defineConfig({
 				},
 			},
 			editLink: {
-				baseUrl: "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
+				baseUrl:
+					"https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
 			},
 			components: {
 				ContentPanel: "./src/components/overrides/ContentPanel.astro",
-				MarkdownContent: "./src/components/overrides/MarkdownContent.astro",
-				Sidebar: "starlight-sidebar-topics/overrides/Sidebar.astro",
+				MarkdownContent:
+					"./src/components/overrides/MarkdownContent.astro",
 				Footer: "./src/components/overrides/Footer.astro",
 			},
 			plugins: [
-				starlightBlogPlugin({ authors, title: "博客" }),
+				starlightBlogPlugin({
+					authors,
+					title: "博客",
+					metrics: {
+						readingTime: true,
+						words: "total",
+					},
+				}),
 				starlightImageZoomPlugin(),
-				starlightSidebarTopicsPlugin(sidebar),
+				starlightSidebarTopics(sidebar, {
+					topics: {
+						blog: ["/blog/**/*"],
+					},
+				}),
 			],
 			logo: { src: "./src/assets/smglogo.webp" },
 			head: [
