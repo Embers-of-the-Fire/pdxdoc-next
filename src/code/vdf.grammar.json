@@ -1,0 +1,68 @@
+{
+	"name": "vdf",
+	"scopeName": "source.vdf",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#records"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.vdf",
+					"match": "//.*"
+				}
+			]
+		},
+		"records": {
+			"patterns": [
+				{
+					"name": "meta.record.vdf",
+					"begin": "(?<!\\\\)(\"(?:\\\\.|[^\\\\\"\\r\\n])*\")\\s+(\"(?:\\\\.|[^\\\\\"\\r\\n])*\")",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.tag.vdf"
+						},
+						"2": {
+							"name": "string.quoted.double.vdf"
+						}
+					},
+					"end": "(?=\\n|$)"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.vdf",
+					"match": "(?<!\\\\)\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s+\\{)"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.vdf",
+					"begin": "(?<!\\\\)\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.vdf",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -15,7 +15,7 @@ title: 内联代码(Inline Scripts)
 我们先来看一个示例：
 
 ```pdx
-# 文件路径：common/inline_scripts/my_test_folder/test_inline_script.txt
+# common/inline_scripts/my_test_folder/test_inline_script.txt
 resources = {
     category = edicts
     upkeep = {
@@ -56,7 +56,7 @@ resources = {
 参数同样可以用于调控内联代码，例如：
 
 ```pdx
-# 文件路径：common/inline_scripts/test_basic_policy
+# common/inline_scripts/test_basic_policy
 $KEY$ = {
     option = {
         name = "$KEY$_a"
@@ -108,7 +108,7 @@ test_1 = {
 定义：
 
 ```pdx
-# 文件路径：common/inline_scripts/just_an_example
+# common/inline_scripts/just_an_example.txt
 resources = {
     category = edicts
     upkeep = {

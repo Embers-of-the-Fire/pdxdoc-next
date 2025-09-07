@@ -1,5 +1,7 @@
 import starlight from "@astrojs/starlight";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { defineConfig } from "astro/config";
+import { pluginFullscreen } from "expressive-code-fullscreen";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import starlightBlogPlugin from "starlight-blog";
 import starlightImageZoomPlugin from "starlight-image-zoom";
@@ -27,7 +29,24 @@ export default defineConfig({
 				},
 			],
 			defaultLocale: "root",
-			expressiveCode: false,
+			expressiveCode: {
+				themes: ["dracula", "github-light"],
+				plugins: [
+					pluginFullscreen({
+						fullscreenButtonTooltip: "全屏模式",
+					}),
+					pluginLineNumbers(),
+				],
+				shiki: {
+					langs: [
+						JSON.parse(fs.readFileSync("./src/code/pdx.grammar.json", "utf-8")),
+						JSON.parse(fs.readFileSync("./src/code/vdf.grammar.json", "utf-8")),
+						JSON.parse(
+							fs.readFileSync("./src/code/yaml.grammar.json", "utf-8"),
+						),
+					],
+				},
+			},
 			locales: {
 				root: {
 					label: "简体中文",
@@ -35,13 +54,11 @@ export default defineConfig({
 				},
 			},
 			editLink: {
-				baseUrl:
-					"https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
+				baseUrl: "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
 			},
 			components: {
 				ContentPanel: "./src/components/overrides/ContentPanel.astro",
-				MarkdownContent:
-					"./src/components/overrides/MarkdownContent.astro",
+				MarkdownContent: "./src/components/overrides/MarkdownContent.astro",
 				Footer: "./src/components/overrides/Footer.astro",
 			},
 			plugins: [
@@ -61,64 +78,6 @@ export default defineConfig({
 				}),
 			],
 			logo: { src: "./src/assets/smglogo.webp" },
-			head: [
-				{
-					tag: "link",
-					attrs: {
-						href: "/prism-darcula.css",
-						rel: "stylesheet",
-					},
-				},
-				{
-					tag: "link",
-					attrs: {
-						href: "/prism-line-number.css",
-						rel: "stylesheet",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-pdxlang.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-yaml.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-vdf.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-diff.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-diff-lang.min.js",
-					},
-				},
-				{
-					tag: "script",
-					attrs: {
-						src: "/scripts/prism-line-number.min.js",
-					},
-				},
-			],
 		}),
 	],
 });

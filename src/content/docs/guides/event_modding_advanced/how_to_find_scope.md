@@ -144,7 +144,7 @@ every_country = { ... }     # 找到所有国家
 
 但我们现在要找的并不是毫无限制，我们需要符合条件的国家，这时候我们就需要使用 limit 了：
 
-```diff-pdx
+```diff lang="pdx"
 every_country = {   # 找到所有国家
 +   limit = {
 +       # 要找到的国家需要满足以下condition
@@ -156,7 +156,7 @@ every_country = {   # 找到所有国家
 
 接下来就是确认要符合的条件：【拥有 拥有灵能特质的人口】。我们要判断这个国家拥有人口的情况，就需要在**condition**中进行 scope 跳跃。我们可以这样：
 
-```diff-pdx
+```diff lang="pdx"
 every_country = {   # 找到所有国家
     limit = {
         # 要找到的国家需要满足以下condition
@@ -186,7 +186,7 @@ add_trust {
 
 那么就应该这样填写：
 
-```diff-pdx
+```diff lang="pdx"
 every_country = {   # 找到所有国家
     limit = {
         # 要找到的国家需要满足以下condition
@@ -338,7 +338,7 @@ random_system_within_border = {     # 找到该国家随机一个境内星系
 
 显然不是，那么我们就需要增加一个 `limit` 。
 
-```diff-pdx
+```diff lang="pdx"
 random_system_within_border = {     # 找到该国家随机一个境内星系
     while = {       # 循环
         count = 3   # 循环次数
@@ -390,7 +390,7 @@ PREV = {
 
 让我们回到范例，完成这一段代码：
 
-```diff-pdx
+```diff lang="pdx"
 random_system_within_border = {     # 找到该国家随机一个境内星系
     while = {       # 循环
         count = 3   # 循环次数

@@ -11,9 +11,15 @@ importers:
       '@astrojs/starlight':
         specifier: 0.35.2
         version: 0.35.2(astro@5.13.5(@types/node@24.3.0)(rollup@4.50.0)(typescript@5.7.3))
+      '@expressive-code/plugin-line-numbers':
+        specifier: ^0.41.3
+        version: 0.41.3
       astro:
         specifier: ^5.13.5
         version: 5.13.5(@types/node@24.3.0)(rollup@4.50.0)(typescript@5.7.3)
+      expressive-code-fullscreen:
+        specifier: ^1.0.0
+        version: 1.0.0(@astrojs/starlight@0.35.2(astro@5.13.5(@types/node@24.3.0)(rollup@4.50.0)(typescript@5.7.3)))(@expressive-code/core@0.41.3)
       rehype-accessible-emojis:
         specifier: ^0.3.2
         version: 0.3.2
@@ -264,6 +270,9 @@ packages:
 
   '@expressive-code/plugin-frames@0.41.3':
     resolution: {integrity: sha512-rFQtmf/3N2CK3Cq/uERweMTYZnBu+CwxBdHuOftEmfA9iBE7gTVvwpbh82P9ZxkPLvc40UMhYt7uNuAZexycRQ==}
+
+  '@expressive-code/plugin-line-numbers@0.41.3':
+    resolution: {integrity: sha512-eig82a4CRC3XgVPQ2S/TMDcLiHJokOCD/mAdNVImpD3segVewxfjGgtj5DXQRo0E0q6f0R0EH34YzTFl5CEPqg==}
 
   '@expressive-code/plugin-shiki@0.41.3':
     resolution: {integrity: sha512-RlTARoopzhFJIOVHLGvuXJ8DCEme/hjV+ZnRJBIxzxsKVpGPW4Oshqg9xGhWTYdHstTsxO663s0cdBLzZj9TQA==}
@@ -1061,6 +1070,13 @@ packages:
 
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
+  expressive-code-fullscreen@1.0.0:
+    resolution: {integrity: sha512-mZkq201+NRG7Ojd9auh42xeKJviTJkEqR4M9cZ4Y2eqkpM9A0B/ZxH3kxvrUYW3rkGx1gF8hvzg0yjvibf0oPg==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.34'
+      '@expressive-code/core': ^0.41.3
 
   expressive-code@0.41.3:
     resolution: {integrity: sha512-YLnD62jfgBZYrXIPQcJ0a51Afv9h8VlWqEGK9uU2T5nL/5rb8SnA86+7+mgCZe5D34Tff5RNEA5hjNVJYHzrFg==}
@@ -2340,6 +2356,10 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.41.3
 
+  '@expressive-code/plugin-line-numbers@0.41.3':
+    dependencies:
+      '@expressive-code/core': 0.41.3
+
   '@expressive-code/plugin-shiki@0.41.3':
     dependencies:
       '@expressive-code/core': 0.41.3
@@ -3101,6 +3121,11 @@ snapshots:
       '@types/estree': 1.0.8
 
   eventemitter3@5.0.1: {}
+
+  expressive-code-fullscreen@1.0.0(@astrojs/starlight@0.35.2(astro@5.13.5(@types/node@24.3.0)(rollup@4.50.0)(typescript@5.7.3)))(@expressive-code/core@0.41.3):
+    dependencies:
+      '@astrojs/starlight': 0.35.2(astro@5.13.5(@types/node@24.3.0)(rollup@4.50.0)(typescript@5.7.3))
+      '@expressive-code/core': 0.41.3
 
   expressive-code@0.41.3:
     dependencies:
