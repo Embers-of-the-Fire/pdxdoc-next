@@ -1,0 +1,181 @@
+{
+	"name": "pdx",
+    "aliases": ["gfx"],
+	"scopeName": "source.pdx",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keys"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#booleans"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.pdx",
+					"match": "#.*"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.pdx",
+					"begin": "(?<!\\\\)\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.pdx",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"keys": {
+			"patterns": [
+				{
+					"name": "entity.other.attribute-name.pdx",
+					"match": "@\\w+\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.pdx",
+					"begin": "\\$",
+					"end": "\\$",
+					"patterns": [
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#operators"
+						}
+					]
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.pdx",
+					"match": "@\\\\?"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.binary.pdx",
+					"match": "-?\\bbx[01]+\\b"
+				},
+				{
+					"name": "constant.numeric.hex.pdx",
+					"match": "-?\\b0x[a-f0-9]+\\b",
+					"captures": {
+						"0": {
+							"name": "constant.numeric.hex.pdx"
+						}
+					}
+				},
+				{
+					"name": "constant.numeric.octal.pdx",
+					"match": "-?\\box[0-7]+\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.pdx",
+					"match": "-?\\b\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?\\b"
+				}
+			]
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.pdx",
+					"match": "\\b(?:yes|no)\\b",
+					"captures": {
+						"0": {
+							"name": "constant.language.boolean.pdx"
+						}
+					}
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.trigger.pdx",
+					"match": "\\b(?:trigger|event_target):"
+				},
+				{
+					"name": "keyword.other.reference.pdx",
+					"match": "\\b(?:from|prev)+\\b"
+				},
+				{
+					"name": "keyword.control.pdx",
+					"match": "\\b(?:root|this|not|or|and|nand|nor|if|else_if|else|factor)\\b"
+				},
+				{
+					"name": "keyword.other.common.pdx",
+					"match": "\\b(?:null|namespace|id|limit|is_triggered_only|mean_time_to_happen|name)\\b"
+				},
+				{
+					"name": "keyword.other.config.pdx",
+					"match": "\\b(?:title|desc|option|trigger|before|immediate|after)\\b"
+				},
+				{
+					"name": "keyword.other.event.pdx",
+					"match": "\\b(?:country|planet|fleet|ship|pop|pop_faction)_event\\b"
+				},
+				{
+					"name": "keyword.other.event.pdx",
+					"match": "\\bevent\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.pdx",
+					"match": "==|!=|<=|>=|>|<|=|\\+|\\.|\\-|\\*|/|%|\\|"
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.definition.pdx",
+					"match": "[{}\\[\\],]"
+				}
+			]
+		}
+	}
+}

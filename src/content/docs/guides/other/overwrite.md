@@ -116,7 +116,7 @@ PS：这部分 mod 会互相覆盖一部分内容，如 mod 资源，想玩谁�
 | Policies                     | 后读覆盖               | 3.X 后可使用 `NAME = {}` 局部覆盖                              |
 | Pop Categories               | 后读覆盖               |                                                              |
 | Pop Faction Types            | 后读覆盖               |                                                              |
-| Pop Jobs                     | 不可局部覆盖           | **不能只覆盖局部的文件内容，必须复制整个文件覆盖（最好同名覆盖），局部覆盖该文件会自动生成的相关修正失效（如“职业+xxx”，“每 xxx 个人口增加 xxx 个职业”）** |
+| Pop Jobs                     | 不可局部覆盖           | **不能只覆盖局部的文件内容，必须复制整个覆盖（最好同名覆盖），局部覆盖该文件会自动生成的相关修正失效（如“职业+xxx”，“每 xxx 个人口增加 xxx 个职业”）** |
 | Precursor Civilizations      |                        |                                                              |
 | Random Names                 |                        |                                                              |
 | Relics                       | 不可覆盖               |                                                              |

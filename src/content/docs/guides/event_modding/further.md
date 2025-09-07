@@ -139,7 +139,7 @@ event = {
 
 先补充完 `event id=count_pop.2` ，通过 `every_country` 遍历国家，再通过我们之前设置的 `country_flag` 筛选国家，然后让筛选出的国家执行接下来的事件：
 
-```diff-pdx
+```diff lang="pdx"
 event = {
     id = count_pop.2
     is_triggered_only = yes
@@ -181,7 +181,7 @@ country_event = {
 
 然后几居室碎料机选择一个殖民星球并将 Scope 转到 planet：
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -197,7 +197,7 @@ country_event = {
 
 我们完成这个功能的思路是：获取一半的人口，转移到首都。那么如何决定转移人口的数量呢，单纯的在 `every_owned_pop` 中是无法实现的，即使我们能够通过 `limit` 筛选一部分 pop，但是仍然无法精确指定一半的人，因此我们需要通过采用 `while` 循环来进行操作。首先需要明确 while 的用法。循环，顾名思义，循环执行某一段命令，以下示例是通过 `count` 来限制循环次数，这里为 5，因此将执行 `random_owned_pop = { kill_pop = yes }` 五次，也就是随机杀死星球上五个人口，**_注意，这个 count 可以承接变量的值_**，这将是关键。
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -218,7 +218,7 @@ country_event = {
 
 当然，我们也可以通过 limit 来限制循环次数，最多 100 次（曾经测试过两次，一次 100 一次 200，结合其他人的说法，应该是 100 次）。以下这个例子展示了 limit 的用法，需要满足 limit 内的条件才能继续循环，这里写的条件为是星球上人口数量大于 0 结合整体语句效果就是：随机杀死一颗星球上的全部人口（不超过 100，如若超过则杀死 100 人这里有可以优化的地方，但是在这里简单处理，无需考虑 100 人以上的情况）
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -265,7 +265,7 @@ country_event = {
 
 此时我们并不知道我们给多少人口加上了 Flag，我们仅仅只是知道了这些人都有了这个 Flag，现在我们需要通过变量来获取人口数量，首先先写一个 while 循环，因为我们不清楚需要循环多少次，因此采取 limit 限制，限制条件为任意一个人口拥有名为 `Count_People` 的 Flag，在执行区域我们随机清除一个拥有 Flag 的人口的 Flag，然后再使用 `change_variable` 使得变量+1（蠢驴变量不需要手动初始化即可直接使用，默认初始化为 0），这样我们就能够每次清除一个 Flag 都使得变量+1，从而得到总人口数量。
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -295,7 +295,7 @@ country_event = {
 
 此时我们需要转移一半的人口，则需要对变量进行除法操作，divide_variable 提供了这一功能，which 填写被除数，value 填写除数，前者必须是一个变量名称，后者即可以是一个变量名称，也可以是一个数字，这里我们需要分半因此填写 2。
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -329,7 +329,7 @@ country_event = {
 
 现在我们的变量已经是总人口数量的一半了，再创建一个 while 循环，采用 count 进行次数限制，上文已经提过了，count 可承接一个变量的值（自动取整），因此我们只需要把变量名称填写上去就好了，此时需要转移人口，每次转移一个，因此采用 `random_owned_people` 转移到 pop，再采用 `resettle_pop` 进行人口转移。pop 选择需要转移的 Scope 为 pop；planet 选择需要转移的 Scope 为 planet。显然这里需要转移的 pop 就是当前随机选中的 pop，因此写上 `pop = this` ，需要转移的 planet 是首都，这里可以直接写上 `planet = capital_scope` 进行处理（以下示例我将变量操作进行了行数缩减，内容并在了一行，各位自行尝试之时还是建议将其完全展开，增强其可读性）
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -392,7 +392,7 @@ country_event = {
 
 而且我们需要注意的是，之前我们所写的 Event 逻辑其实是有问题的，如果这个 Event 需要不断的启动，我们的变量在使用完之后并为归 0，将会导致下一次进行人口统计的失误，因此我们需要将变量手动置为 0。
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = count_pop.3
     is_triggered_only = yes
@@ -547,7 +547,7 @@ country_event = {
 
 然后我们需要进行领袖的选择，由于我们无法定向选择某个领袖，因此我们需要用到 `random_owned_leader` 进行随机选取，每次随机选取我们就存储一个 Target，此时我们需要八个选项，因此我们需要八个不同的 Target 来存储不同的 leader：
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = test_event.1
     is_triggered_only = yes
@@ -576,7 +576,7 @@ country_event = {
 
 我们此时可以想到一个问题，容易重复选取到同一个对象，因此我们需要将已经选取的对象进行筛选，利用我们上边提到的 Flag 的知识，我们可以很容易想到，每选取一个领袖就为该领袖上一个 Flag，筛选没有该 Flag 的领袖存储 Target 即可，不过此时记得在事件完成之后完成清除 flag 以免影响下一次事件触发的判定：
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = test_event.1
     is_triggered_only = yes
@@ -625,7 +625,7 @@ country_event = {
 
 以此将全部 `random_owned_leader` 加上判断以及效果，此时我们会考虑可能没有那么多领袖，导致存储了一个空的 Target，因此我们最好再加上一个判断；而且我们也不期望在领袖不足之时弹出过多选项，因此我们也在 option 上加上判断（刷新按钮当然得出现满选项才能使用，因此判断和最后一个承接领袖的 trigger 一样）：
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = test_event.1
     is_triggered_only = yes
@@ -684,7 +684,7 @@ country_event = {
 
 该判断语句为 `exists = this` 以及 `exists = event_target:<TargetKey>` ，后者表示调用之前存储的 Target，语句表示是否存在当前 Scope，虽然存储一个空 Target 会直接删除该 Target，但我期望各位能够有一个良好的习惯，不对空对象进行操作，以免遇到不必要的麻烦。此时我们已经取到了八个不同的领袖，此时我们需要将其依附于不同选项，开始调用这八个 Target 并添加一个特质，在刷新选项添加重启该事件的效果来随机重排选择的领袖：
 
-```diff-pdx
+```diff lang="pdx"
 country_event = {
     id = test_event.1
     is_triggered_only = yes
