@@ -7,6 +7,7 @@ import starlightBlogPlugin from "starlight-blog";
 import starlightImageZoomPlugin from "starlight-image-zoom";
 import starlightLinksValidator from "starlight-links-validator";
 import starlightSidebarTopics from "starlight-sidebar-topics";
+import fs from "fs";
 import authors from "./author.ts";
 import { sidebar } from "./src/sidebar/sidebar.ts";
 

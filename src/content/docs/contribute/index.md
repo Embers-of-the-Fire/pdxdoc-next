@@ -20,40 +20,31 @@ title: Stellaris Mod Document 群星 Mod 制作文档
 
 #### 代码块
 
-本仓库提供了内置的 Paradox 脚本语言语法高亮，使用 `pdx`，`pdx-lang` 或 `pdx_lang` 即可。
+本仓库使用 [Expressive Code](https://expressive-code.com/) 进行代码语法高亮，基于 [Shiki](https://shiki.style/) 引擎。
 
-本仓库使用 [Prism](https://prismjs.com) 的 diff 高亮插件，使用 `diff-<language code>` 即可使用带有 diff 功能的代码高亮。
+**内置语言支持：**
+- 本仓库提供了内置的 Paradox 脚本语言语法高亮，使用 `pdx`，`pdx-lang` 或 `pdx_lang` 即可
+- VDF (Valve Data Format) 支持，使用 `vdf` 语言标识符
+- YAML 支持增强
 
-如果想要增加新的语言支持，请在 `public/scripts` 目录下添加名为 `prism-<lang>.js` 的代码（例如 `prism-rust.js`），务必以最新的 ES6 规范写作。
+**添加新语言支持：**
 
-完成代码高亮配置后，使用 [`swc`](https://swc.rs) 和 [`uglify-js`](https://www.npmjs.com/package/uglify-js) 进行代码压缩：
+如果想要增加新的语言支持，需要在 `src/code/` 目录下添加对应的 TextMate 语法定义文件（`.grammar.json` 格式），然后在 `astro.config.mjs` 的 `expressiveCode.shiki.langs` 配置中引用：
 
-```bash
-swc prism-<lang>.js -o prism-<lang>.min.js
-uglifyjs --no-module --webkit prism-<lang>.min.js -o prism-<lang>.min.js -m
-```
-
-仓库根目录下有一个 NuShell 脚本文件 `uglify.nu`，可以使用该文件快速更新所有代码高亮：
-
-```nu
-source ./uglify.nu
-uglify all ./public/scripts -d
-```
-
-压缩后，将压缩后的文件加入到 `astro.config.mjs` 中：
-
-```typescript
-{
-    tag: "script",
-    attrs: {
-        src: "/scripts/prism-<your language>.min.js",
-    },
+```javascript
+shiki: {
+    langs: [
+        JSON.parse(fs.readFileSync("./src/code/your-lang.grammar.json", "utf-8")),
+        // ... 其他语言
+    ],
 },
 ```
 
-**注意**
-
-提交到仓库中时请保留压缩前和压缩后的文件以便生成文档。
+**可用功能：**
+- 支持全屏模式查看代码
+- 行号显示
+- 双主题支持（深色/浅色模式）
+- 语法高亮基于 Shiki，支持大量编程语言
 
 ### 博客
 
