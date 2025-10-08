@@ -1,6 +1,7 @@
 ---
 title: 关于新站点
 date: 2024-01-19
+lastUpdated: 2025-10-08
 authors:
     - embers-of-the-fire
 excerpt: 新站点事宜与贡献指南
@@ -10,7 +11,7 @@ featured: true
 
 鉴于 Docsify 功能的局限性，本站迁移至当前站点。
 
-目前，两个站点将并行运转，本站点作为测试站点。
+目前，旧站点已停止运营，本站点为维护z站点。
 
 ## 关于博客区
 
