@@ -51,6 +51,11 @@ const authors: Record<string, blogAuthorSchema> = {
         title: "Modder",
         picture: "/authors/咖啡今天仍然在电鱼.jpg",
     },
+    古明地瓜: {
+        name: "古明地瓜",
+        title: "Modder",
+        picture: "/authors/古明地瓜.jpg",
+    }
 };
 
 export default authors;
