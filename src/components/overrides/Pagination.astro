@@ -1,0 +1,23 @@
+---
+import CreditReferenceCard from "starlight-cooler-credit/components/CreditReferenceCard.astro";
+import Comments from "starlight-giscus/components/Comments.astro";
+import Default from '@astrojs/starlight/components/Pagination.astro';
+---
+
+<Default />
+<Comments />
+
+<div class="starlight-cooler-credit-pagination-credit-reference-card">
+  <CreditReferenceCard />
+</div>
+
+<style>
+  .starlight-cooler-credit-pagination-credit-reference-card {
+    display: block;
+  }
+  @media (min-width: 72rem) {
+    .starlight-cooler-credit-pagination-credit-reference-card {
+      display: none;
+    }
+  }
+</style>

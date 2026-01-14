@@ -29,6 +29,12 @@ importers:
       starlight-blog:
         specifier: 0.25.2
         version: 0.25.2(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))
+      starlight-cooler-credit:
+        specifier: ^0.5.0
+        version: 0.5.0(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))
+      starlight-giscus:
+        specifier: ^0.8.1
+        version: 0.8.1(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))
       starlight-image-zoom:
         specifier: 0.13.2
         version: 0.13.2(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))
@@ -917,6 +923,9 @@ packages:
     resolution: {integrity: sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
+  change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
+
   character-entities-html4@2.1.0:
     resolution: {integrity: sha512-1v7fgQRj6hnSwFpq1Eu0ynr/CDEw0rXo2B61qXrLNdHZmPKgb7fqS1a2JwF0rISo9q77jDI8VMEHoApn8qDoZA==}
 
@@ -1791,6 +1800,18 @@ packages:
     engines: {node: '>=18.20.8'}
     peerDependencies:
       '@astrojs/starlight': '>=0.33.0'
+
+  starlight-cooler-credit@0.5.0:
+    resolution: {integrity: sha512-RWGBunlTq0B19RQ6SFhIqPFP0Bdo8NCOhWoa60uDhEFlC3bu14nkMCGesnJ6Oqk6bUzOi3/HAd8dyLUvdxO7OA==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.32'
+
+  starlight-giscus@0.8.1:
+    resolution: {integrity: sha512-etgWym6KpHeNSkbggEhpGEPNaLIwypWdvE7BxNFHGUkjiq6EYSJhr5zoMGZ9QfnMdkcj8PqKrJTM88YdCSEiDQ==}
+    engines: {node: ^18.20.8 || ^20.3.0 || >=22.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.35.0'
 
   starlight-image-zoom@0.13.2:
     resolution: {integrity: sha512-fDJrx+UZXhkbhEeXKoRogTKAYtrYVJPw6wmSUI3nHUTA0vuRM6EI//2Z8bzv3Ecvz0pHKD1vAxtS01mLyessBA==}
@@ -2983,6 +3004,8 @@ snapshots:
   ccount@2.0.1: {}
 
   chalk@5.6.2: {}
+
+  change-case@5.4.4: {}
 
   character-entities-html4@2.1.0: {}
 
@@ -4424,6 +4447,15 @@ snapshots:
     transitivePeerDependencies:
       - astro
       - supports-color
+
+  starlight-cooler-credit@0.5.0(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))):
+    dependencies:
+      '@astrojs/starlight': 0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))
+      change-case: 5.4.4
+
+  starlight-giscus@0.8.1(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))):
+    dependencies:
+      '@astrojs/starlight': 0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))
 
   starlight-image-zoom@0.13.2(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))):
     dependencies:

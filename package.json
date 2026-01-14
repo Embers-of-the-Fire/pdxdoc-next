@@ -17,6 +17,8 @@
     "rehype-accessible-emojis": "^0.3.2",
     "sharp": "0.34.5",
     "starlight-blog": "0.25.2",
+    "starlight-cooler-credit": "^0.5.0",
+    "starlight-giscus": "^0.8.1",
     "starlight-image-zoom": "0.13.2",
     "starlight-links-validator": "0.19.2",
     "starlight-sidebar-topics": "0.6.2",
