@@ -1,21 +1,20 @@
 ---
 import { Icon } from "@astrojs/starlight/components";
 
-const content = "abc";
-const id = "test-banner-2026-01-14";
+const content =
+  "年度活动：创作属于自己的预设国！加入 Modder 社区，分享你的创作！";
+const href = "https://qm.qq.com/q/bhmn6BVc6Q";
+const id = "annual-event-2026-01-14";
 ---
 
 <script define:vars={{ id }}>
   if (localStorage.getItem(id) === "true") {
-    document.documentElement.style.setProperty(
-      "--banner-display",
-      "none"
-    );
+    document.documentElement.style.setProperty("--banner-display", "none");
   }
 </script>
 
-<div class="sl-banner" id="banner" data-pagefind-ignore data-banner-id={id} style="display: var(--banner-display, flex);">
-  <span id="banner-content">{content}</span>
+<div class="sl-banner" id="banner" data-pagefind-ignore data-banner-id={id}>
+  <span id="banner-content"><a href={href}>{content}</a></span>
   <button id="banner-close" aria-label="Close banner" type="button">
     <Icon name="close" />
   </button>
@@ -36,7 +35,7 @@ const id = "test-banner-2026-01-14";
       text-wrap: balance;
       box-shadow: var(--sl-shadow-sm);
 
-      display: flex;
+      display: var(--banner-display, flex);
       align-items: center;
       justify-content: center;
       gap: 1rem;
