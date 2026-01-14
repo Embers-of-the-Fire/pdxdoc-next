@@ -6,6 +6,12 @@
 
 本仓库使用 [pnpm](https://pnpm.io) 作为统一包管理工具。
 
+### 开发者阅读
+
+#### 更新 Banner
+
+前往 [`Banner.astro`](./src/components/overrides/Banner.astro)，编辑静态参数 `content` 和 `id`。
+
 ### 文档部分
 
 主文档内容位于 `./src/content/docs/guides` 目录下。
