@@ -44,6 +44,9 @@ importers:
       starlight-llms-txt:
         specifier: ^0.7.0
         version: 0.7.0(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))
+      starlight-scroll-to-top:
+        specifier: ^0.4.0
+        version: 0.4.0(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))
       starlight-sidebar-topics:
         specifier: 0.6.2
         version: 0.6.2(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3)))
@@ -1866,6 +1869,12 @@ packages:
     peerDependencies:
       '@astrojs/starlight': '>=0.31'
       astro: ^5.15.9
+
+  starlight-scroll-to-top@0.4.0:
+    resolution: {integrity: sha512-lxsW5Sv+oKCI8CYZQ6Ue957cExiHMozK73LmmbsvpBKWryW+AKU4OXmX/1bTQNx+mVLZcpm2qTwKa1KX5VdEaQ==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.35'
 
   starlight-sidebar-topics@0.6.2:
     resolution: {integrity: sha512-SNCTUZS/hcVor0ZcaXbaSVU37+V+qtvzNirkvnOg3Mqu/awuGpthkH5+uKpiZqWxLffp6TrOlsv5E5QsxrndNg==}
@@ -4602,6 +4611,10 @@ snapshots:
       unist-util-remove: 4.0.0
     transitivePeerDependencies:
       - supports-color
+
+  starlight-scroll-to-top@0.4.0(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))):
+    dependencies:
+      '@astrojs/starlight': 0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))
 
   starlight-sidebar-topics@0.6.2(@astrojs/starlight@0.37.2(astro@5.16.9(@types/node@25.0.8)(rollup@4.55.1)(typescript@5.7.3))):
     dependencies:

@@ -13,6 +13,7 @@ import starlightLlmsTxt from "starlight-llms-txt";
 import fs from "fs";
 import authors from "./author.ts";
 import { sidebar } from "./src/sidebar/sidebar.ts";
+import starlightScrollToTop from "starlight-scroll-to-top";
 
 // https://astro.build/config
 export default defineConfig({
@@ -115,6 +116,12 @@ export default defineConfig({
                     categoryId: "DIC_kwDOLG4GI84C08HQ",
                 }),
                 starlightLlmsTxt(),
+                starlightScrollToTop({
+                    showTooltip: true,
+                    smoothScroll: true,
+                    showProgressRing: true,
+                    showOnHomepage: false,
+                }),
             ],
             logo: { src: "./src/assets/smglogo.webp" },
         }),
