@@ -76,7 +76,6 @@ export default defineConfig({
                     "https://github.com/Embers-of-the-Fire/pdxdoc-next/edit/main",
             },
             components: {
-                ContentPanel: "./src/components/overrides/ContentPanel.astro",
                 MarkdownContent:
                     "./src/components/overrides/MarkdownContent.astro",
                 Footer: "./src/components/overrides/Footer.astro",
