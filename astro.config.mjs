@@ -9,6 +9,7 @@ import starlightLinksValidator from "starlight-links-validator";
 import starlightSidebarTopics from "starlight-sidebar-topics";
 import starlightCoolerCredit from "starlight-cooler-credit";
 import starlightGiscus from "starlight-giscus";
+import starlightLlmsTxt from "starlight-llms-txt";
 import fs from "fs";
 import authors from "./author.ts";
 import { sidebar } from "./src/sidebar/sidebar.ts";
@@ -78,7 +79,7 @@ export default defineConfig({
                 MarkdownContent:
                     "./src/components/overrides/MarkdownContent.astro",
                 Footer: "./src/components/overrides/Footer.astro",
-				Pagination: "./src/components/overrides/Pagination.astro",
+                Pagination: "./src/components/overrides/Pagination.astro",
             },
             plugins: [
                 starlightBlogPlugin({
@@ -113,6 +114,7 @@ export default defineConfig({
                     category: "Ideas",
                     categoryId: "DIC_kwDOLG4GI84C08HQ",
                 }),
+                starlightLlmsTxt(),
             ],
             logo: { src: "./src/assets/smglogo.webp" },
         }),
