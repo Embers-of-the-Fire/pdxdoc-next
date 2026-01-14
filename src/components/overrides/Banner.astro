@@ -1,0 +1,95 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+const content = "abc";
+const id = "test-banner-2026-01-14";
+---
+
+<script define:vars={{ id }}>
+  if (localStorage.getItem(id) === "true") {
+    document.documentElement.style.setProperty(
+      "--banner-display",
+      "none"
+    );
+  }
+</script>
+
+<div class="sl-banner" id="banner" data-pagefind-ignore data-banner-id={id} style="display: var(--banner-display, flex);">
+  <span id="banner-content">{content}</span>
+  <button id="banner-close" aria-label="Close banner" type="button">
+    <Icon name="close" />
+  </button>
+</div>
+
+<style>
+  @layer starlight.core {
+    .sl-banner {
+      --__sl-banner-text: var(
+        --sl-color-banner-text,
+        var(--sl-color-text-invert)
+      );
+      padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
+      background-color: var(--sl-color-banner-bg, var(--sl-color-bg-accent));
+      color: var(--__sl-banner-text);
+      line-height: var(--sl-line-height-headings);
+      text-align: center;
+      text-wrap: balance;
+      box-shadow: var(--sl-shadow-sm);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .sl-banner :global(a) {
+      color: var(--__sl-banner-text);
+    }
+  }
+
+  #banner-content {
+    flex-grow: 1;
+  }
+
+  #banner-close {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition:
+      opacity 0.2s,
+      background-color 0.2s;
+  }
+
+  #banner-close:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #banner-close:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const banner = document.getElementById("banner");
+  const closeButton = document.getElementById("banner-close");
+
+  if (banner && closeButton) {
+    const bannerId = banner.getAttribute("data-banner-id");
+    if (bannerId) {
+      closeButton.addEventListener("click", () => {
+        banner.style.display = "none";
+        localStorage.setItem(bannerId, "true");
+      });
+    }
+  }
+</script>

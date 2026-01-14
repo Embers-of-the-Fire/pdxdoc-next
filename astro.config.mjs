@@ -80,6 +80,7 @@ export default defineConfig({
                     "./src/components/overrides/MarkdownContent.astro",
                 Footer: "./src/components/overrides/Footer.astro",
                 Pagination: "./src/components/overrides/Pagination.astro",
+				Banner: "./src/components/overrides/Banner.astro",
             },
             plugins: [
                 starlightBlogPlugin({
@@ -113,6 +114,8 @@ export default defineConfig({
                     repoId: "R_kgDOLG4GIw",
                     category: "Ideas",
                     categoryId: "DIC_kwDOLG4GI84C08HQ",
+					inputPosition: "top",
+					lazy: true,
                 }),
                 starlightLlmsTxt(),
                 starlightScrollToTop({
