@@ -1,19 +1,18 @@
+import fs from "node:fs";
 import starlight from "@astrojs/starlight";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { defineConfig } from "astro/config";
 import { pluginFullscreen } from "expressive-code-fullscreen";
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import starlightBlogPlugin from "starlight-blog";
-import starlightImageZoomPlugin from "starlight-image-zoom";
-import starlightLinksValidator from "starlight-links-validator";
-import starlightSidebarTopics from "starlight-sidebar-topics";
 import starlightCoolerCredit from "starlight-cooler-credit";
 import starlightGiscus from "starlight-giscus";
+import starlightImageZoomPlugin from "starlight-image-zoom";
 import starlightLlmsTxt from "starlight-llms-txt";
-import fs from "fs";
+import starlightScrollToTop from "starlight-scroll-to-top";
+import starlightSidebarTopics from "starlight-sidebar-topics";
 import authors from "./author.ts";
 import { sidebar } from "./src/sidebar/sidebar.ts";
-import starlightScrollToTop from "starlight-scroll-to-top";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +22,6 @@ export default defineConfig({
     },
     site: "https://main--pdxdoc-next.netlify.app/",
     integrations: [
-        starlightLinksValidator(),
         starlight({
             title: "Stellaris Mod 教程",
             social: [
@@ -80,7 +78,7 @@ export default defineConfig({
                     "./src/components/overrides/MarkdownContent.astro",
                 Footer: "./src/components/overrides/Footer.astro",
                 Pagination: "./src/components/overrides/Pagination.astro",
-				Banner: "./src/components/overrides/Banner.astro",
+                Banner: "./src/components/overrides/Banner.astro",
             },
             plugins: [
                 starlightBlogPlugin({
@@ -99,14 +97,10 @@ export default defineConfig({
                 }),
                 starlightCoolerCredit({
                     credit: {
-                        title: {
-                            "zh-CN": "Created by Stellaris Mod Group",
-                        },
+                        title: "Created by Stellaris Mod Group",
                         href: "https://qm.qq.com/q/bhmn6BVc6Q",
-                        description: {
-                            "zh-CN":
-                                "本网站由 Stellaris Mod Group 创建和维护。点击加入群组！",
-                        },
+                        description:
+                            "本网站由 Stellaris Mod Group 创建和维护。点击加入群组！",
                     },
                 }),
                 starlightGiscus({
@@ -114,8 +108,8 @@ export default defineConfig({
                     repoId: "R_kgDOLG4GIw",
                     category: "Ideas",
                     categoryId: "DIC_kwDOLG4GI84C08HQ",
-					inputPosition: "top",
-					lazy: true,
+                    inputPosition: "top",
+                    lazy: true,
                 }),
                 starlightLlmsTxt(),
                 starlightScrollToTop({
