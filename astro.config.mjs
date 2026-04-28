@@ -9,7 +9,6 @@ import starlightCoolerCredit from "starlight-cooler-credit";
 import starlightGiscus from "starlight-giscus";
 import starlightImageZoomPlugin from "starlight-image-zoom";
 import starlightLlmsTxt from "starlight-llms-txt";
-import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightSidebarTopics from "starlight-sidebar-topics";
 import authors from "./author.ts";
 import { sidebar } from "./src/sidebar/sidebar.ts";
@@ -112,12 +111,6 @@ export default defineConfig({
                     lazy: true,
                 }),
                 starlightLlmsTxt(),
-                starlightScrollToTop({
-                    showTooltip: true,
-                    smoothScroll: true,
-                    showProgressRing: true,
-                    showOnHomepage: false,
-                }),
             ],
             logo: { src: "./src/assets/smglogo.webp" },
         }),
