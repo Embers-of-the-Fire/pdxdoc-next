@@ -32,37 +32,58 @@ export const guidesSidebar: Sidebar = [
     },
     {
         label: "Common Modding",
-        collapsed: true,
-        autogenerate: { directory: "guides/common_modding" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/common_modding"
+            },
+        }]
     },
     {
         label: "Event Modding",
-        collapsed: true,
-        autogenerate: { directory: "guides/event_modding" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/event_modding"
+            },
+        }]
     },
     {
         label: "Event Modding 进阶",
-        collapsed: true,
-        autogenerate: { directory: "guides/event_modding_advanced" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/event_modding_advanced"
+            },
+        }]
     },
     {
         label: "函数化",
-        collapsed: true,
-        autogenerate: { directory: "guides/functions" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/functions"
+            },
+        }]
     },
     {
         label: "Dynamic Modding",
-        collapsed: true,
-        autogenerate: { directory: "guides/dynamic_modding" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/dynamic_modding"
+            },
+        }]
     },
     {
         label: "GUI 与视觉效果",
-        collapsed: true,
-        autogenerate: { directory: "guides/visual" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/visual"
+            },
+        }]
     },
     {
         label: "其他教程",
-        collapsed: true,
-        autogenerate: { directory: "guides/other" },
+        items: [{
+            autogenerate: {
+                collapsed: true, directory: "guides/other"
+            },
+        }],
     },
 ];
