@@ -44,7 +44,7 @@ featured: true
 
 ## 第三步：打开你的MOD目录
 
-:::warning
+:::caution
 
 注意是你某个 MOD 的整个，而不是 MOD 里的某个文件或者文件夹！！！！
 
